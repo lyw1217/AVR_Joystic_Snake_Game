@@ -1,0 +1,2364 @@
+
+Joystick_snake_game.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         000002e2  00800100  00000cf4  00000d88  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000cf4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000009b  008003e2  008003e2  0000106a  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000106a  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000109c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000001c8  00000000  00000000  000010dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001eef  00000000  00000000  000012a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000f53  00000000  00000000  00003193  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000119a  00000000  00000000  000040e6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000448  00000000  00000000  00005280  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000008b8  00000000  00000000  000056c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000fa5  00000000  00000000  00005f80  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000001d0  00000000  00000000  00006f25  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	45 c0       	rjmp	.+138    	; 0x8c <__ctors_end>
+   2:	00 00       	nop
+   4:	60 c0       	rjmp	.+192    	; 0xc6 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	5e c0       	rjmp	.+188    	; 0xc6 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	5c c0       	rjmp	.+184    	; 0xc6 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	5a c0       	rjmp	.+180    	; 0xc6 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	58 c0       	rjmp	.+176    	; 0xc6 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	56 c0       	rjmp	.+172    	; 0xc6 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	54 c0       	rjmp	.+168    	; 0xc6 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	52 c0       	rjmp	.+164    	; 0xc6 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	50 c0       	rjmp	.+160    	; 0xc6 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	4e c0       	rjmp	.+156    	; 0xc6 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	4c c0       	rjmp	.+152    	; 0xc6 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	4a c0       	rjmp	.+148    	; 0xc6 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	48 c0       	rjmp	.+144    	; 0xc6 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	46 c0       	rjmp	.+140    	; 0xc6 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	74 c2       	rjmp	.+1256   	; 0x526 <__vector_15>
+  3e:	00 00       	nop
+  40:	42 c0       	rjmp	.+132    	; 0xc6 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	40 c0       	rjmp	.+128    	; 0xc6 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	3e c0       	rjmp	.+124    	; 0xc6 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	3c c0       	rjmp	.+120    	; 0xc6 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	3a c0       	rjmp	.+116    	; 0xc6 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	38 c0       	rjmp	.+112    	; 0xc6 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	36 c0       	rjmp	.+108    	; 0xc6 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	34 c0       	rjmp	.+104    	; 0xc6 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	32 c0       	rjmp	.+100    	; 0xc6 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	30 c0       	rjmp	.+96     	; 0xc6 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	2e c0       	rjmp	.+92     	; 0xc6 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	2c c0       	rjmp	.+88     	; 0xc6 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	2a c0       	rjmp	.+84     	; 0xc6 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	28 c0       	rjmp	.+80     	; 0xc6 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	26 c0       	rjmp	.+76     	; 0xc6 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	24 c0       	rjmp	.+72     	; 0xc6 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	22 c0       	rjmp	.+68     	; 0xc6 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	20 c0       	rjmp	.+64     	; 0xc6 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	1e c0       	rjmp	.+60     	; 0xc6 <__bad_interrupt>
+	...
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	13 e0       	ldi	r17, 0x03	; 3
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e4 ef       	ldi	r30, 0xF4	; 244
+  a0:	fc e0       	ldi	r31, 0x0C	; 12
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a2 3e       	cpi	r26, 0xE2	; 226
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	24 e0       	ldi	r18, 0x04	; 4
+  b4:	a2 ee       	ldi	r26, 0xE2	; 226
+  b6:	b3 e0       	ldi	r27, 0x03	; 3
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	ad 37       	cpi	r26, 0x7D	; 125
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	11 d3       	rcall	.+1570   	; 0x6e6 <main>
+  c4:	15 c6       	rjmp	.+3114   	; 0xcf0 <_exit>
+
+000000c6 <__bad_interrupt>:
+  c6:	9c cf       	rjmp	.-200    	; 0x0 <__vectors>
+
+000000c8 <ADC_init_single>:
+	
+	return ADC;					// 10비트 값을 반화
+}
+
+void ADC_init_single(){
+	ADMUX |= (1 << REFS0);		// AVCC를 기준전압으로 선택
+  c8:	3e 9a       	sbi	0x07, 6	; 7
+	ADCSRA |= 0X07;				// 분주비 설정
+  ca:	86 b1       	in	r24, 0x06	; 6
+  cc:	87 60       	ori	r24, 0x07	; 7
+  ce:	86 b9       	out	0x06, r24	; 6
+	ADCSRA |= (1 << ADEN);		// ADC 활성화
+  d0:	37 9a       	sbi	0x06, 7	; 6
+	ADCSRA |= (0 << ADFR);		// 단일 변환 모드
+  d2:	86 b1       	in	r24, 0x06	; 6
+  d4:	86 b9       	out	0x06, r24	; 6
+  d6:	08 95       	ret
+
+000000d8 <read_ADC_single>:
+}
+
+int read_ADC_single(unsigned char channel){
+	ADMUX = ((ADMUX & 0xE0) | channel);	// 채널 선택 -> ADMUX bit 1110 0000 중 111 부분은 유지를 하고 0~4번 bit만 채널을 선택하겠다.
+  d8:	97 b1       	in	r25, 0x07	; 7
+  da:	90 7e       	andi	r25, 0xE0	; 224
+  dc:	89 2b       	or	r24, r25
+  de:	87 b9       	out	0x07, r24	; 7
+	ADCSRA |= (1 << ADSC);
+  e0:	36 9a       	sbi	0x06, 6	; 6
+	
+	while(!(ADCSRA & (1 << ADIF)));	// 변환 종료 대기
+  e2:	34 9b       	sbis	0x06, 4	; 6
+  e4:	fe cf       	rjmp	.-4      	; 0xe2 <read_ADC_single+0xa>
+
+	return ADC;					// 10비트 값을 반화
+  e6:	84 b1       	in	r24, 0x04	; 4
+  e8:	95 b1       	in	r25, 0x05	; 5
+  ea:	08 95       	ret
+
+000000ec <button_Init>:
+	else if (((PIN_BUTTON & (0x01 << PIN_JOY)) == (0x01 << PIN_JOY)) && (prevState == 0)){ // 버튼이 open 이면서 prevState == 0 --> 버튼이 처음 눌렸다가 떼졌을 때
+		prevState = 1;
+		return 1;
+	}
+	return 0;
+}
+  ec:	e4 e6       	ldi	r30, 0x64	; 100
+  ee:	f0 e0       	ldi	r31, 0x00	; 0
+  f0:	80 81       	ld	r24, Z
+  f2:	88 7f       	andi	r24, 0xF8	; 248
+  f4:	80 83       	st	Z, r24
+  f6:	08 95       	ret
+
+000000f8 <diff_button_State>:
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  f8:	8f e3       	ldi	r24, 0x3F	; 63
+  fa:	9c e9       	ldi	r25, 0x9C	; 156
+  fc:	01 97       	sbiw	r24, 0x01	; 1
+  fe:	f1 f7       	brne	.-4      	; 0xfc <diff_button_State+0x4>
+ 100:	00 c0       	rjmp	.+0      	; 0x102 <diff_button_State+0xa>
+ 102:	00 00       	nop
+uint8_t diff_button_State(){
+	static uint8_t prevState_2 = 1; // static을 선언하면 전역변수처럼, 처음만 설정되고 다음부터는 기존 값을 그대로 사용한다.
+	
+	_delay_ms(10); // 채터링 예방
+	
+	if(((PIN_BUTTON & (0x01 << PIN_DIFF)) == 0) && (prevState_2 == 1)){ // 버튼 close 이면서 prevState == 1 --> 버튼이 처음 눌린 상태
+ 104:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <__TEXT_REGION_LENGTH__+0x7e0063>
+ 108:	89 2f       	mov	r24, r25
+ 10a:	82 70       	andi	r24, 0x02	; 2
+ 10c:	91 fd       	sbrc	r25, 1
+ 10e:	07 c0       	rjmp	.+14     	; 0x11e <diff_button_State+0x26>
+ 110:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <prevState_2.2232>
+ 114:	91 30       	cpi	r25, 0x01	; 1
+ 116:	19 f4       	brne	.+6      	; 0x11e <diff_button_State+0x26>
+		prevState_2 = 0;
+ 118:	10 92 05 01 	sts	0x0105, r1	; 0x800105 <prevState_2.2232>
+		return 0;
+ 11c:	08 95       	ret
+	}
+	else if (((PIN_BUTTON & (0x01 << PIN_DIFF)) == (0x01 << PIN_DIFF)) && (prevState_2 == 0)){ // 버튼이 open 이면서 prevState == 0 --> 버튼이 처음 눌렸다가 떼졌을 때
+ 11e:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <__TEXT_REGION_LENGTH__+0x7e0063>
+ 122:	89 2f       	mov	r24, r25
+ 124:	82 70       	andi	r24, 0x02	; 2
+ 126:	91 ff       	sbrs	r25, 1
+ 128:	09 c0       	rjmp	.+18     	; 0x13c <diff_button_State+0x44>
+ 12a:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <prevState_2.2232>
+ 12e:	81 11       	cpse	r24, r1
+ 130:	04 c0       	rjmp	.+8      	; 0x13a <diff_button_State+0x42>
+		prevState_2 = 1;
+ 132:	81 e0       	ldi	r24, 0x01	; 1
+ 134:	80 93 05 01 	sts	0x0105, r24	; 0x800105 <prevState_2.2232>
+		return 1;
+ 138:	08 95       	ret
+	}
+	return 0;
+ 13a:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 13c:	08 95       	ret
+
+0000013e <restart_button_State>:
+ 13e:	8f e3       	ldi	r24, 0x3F	; 63
+ 140:	9c e9       	ldi	r25, 0x9C	; 156
+ 142:	01 97       	sbiw	r24, 0x01	; 1
+ 144:	f1 f7       	brne	.-4      	; 0x142 <restart_button_State+0x4>
+ 146:	00 c0       	rjmp	.+0      	; 0x148 <restart_button_State+0xa>
+ 148:	00 00       	nop
+uint8_t restart_button_State(){
+	static uint8_t prevState_3 = 1; // static을 선언하면 전역변수처럼, 처음만 설정되고 다음부터는 기존 값을 그대로 사용한다.
+	
+	_delay_ms(10); // 채터링 예방
+	
+	if(((PIN_BUTTON & (0x01 << PIN_REST)) == 0) && (prevState_3 == 1)){ // 버튼 close 이면서 prevState == 1 --> 버튼이 처음 눌린 상태
+ 14a:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <__TEXT_REGION_LENGTH__+0x7e0063>
+ 14e:	89 2f       	mov	r24, r25
+ 150:	84 70       	andi	r24, 0x04	; 4
+ 152:	92 fd       	sbrc	r25, 2
+ 154:	07 c0       	rjmp	.+14     	; 0x164 <restart_button_State+0x26>
+ 156:	90 91 04 01 	lds	r25, 0x0104	; 0x800104 <prevState_3.2235>
+ 15a:	91 30       	cpi	r25, 0x01	; 1
+ 15c:	19 f4       	brne	.+6      	; 0x164 <restart_button_State+0x26>
+		prevState_3 = 0;
+ 15e:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <prevState_3.2235>
+		return 0;
+ 162:	08 95       	ret
+	}
+	else if (((PIN_BUTTON & (0x01 << PIN_REST)) == (0x01 << PIN_REST)) && (prevState_3 == 0)){ // 버튼이 open 이면서 prevState == 0 --> 버튼이 처음 눌렸다가 떼졌을 때
+ 164:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <__TEXT_REGION_LENGTH__+0x7e0063>
+ 168:	89 2f       	mov	r24, r25
+ 16a:	84 70       	andi	r24, 0x04	; 4
+ 16c:	92 ff       	sbrs	r25, 2
+ 16e:	09 c0       	rjmp	.+18     	; 0x182 <restart_button_State+0x44>
+ 170:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <prevState_3.2235>
+ 174:	81 11       	cpse	r24, r1
+ 176:	04 c0       	rjmp	.+8      	; 0x180 <restart_button_State+0x42>
+		prevState_3 = 1;
+ 178:	81 e0       	ldi	r24, 0x01	; 1
+ 17a:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <prevState_3.2235>
+		return 1;
+ 17e:	08 95       	ret
+	}
+	return 0;
+ 180:	80 e0       	ldi	r24, 0x00	; 0
+ 182:	08 95       	ret
+
+00000184 <ShiftClock>:
+}
+*/
+
+void ShiftClock(void)
+{
+	set_bit(SHIFT_CLOCK);
+ 184:	1f 9a       	sbi	0x03, 7	; 3
+	clear_bit(SHIFT_CLOCK);
+ 186:	1f 98       	cbi	0x03, 7	; 3
+ 188:	08 95       	ret
+
+0000018a <LatchClock>:
+}
+void LatchClock(void)
+{
+	set_bit(LATCH_CLOCK);
+ 18a:	1e 9a       	sbi	0x03, 6	; 3
+	clear_bit(LATCH_CLOCK);
+ 18c:	1e 98       	cbi	0x03, 6	; 3
+ 18e:	08 95       	ret
+
+00000190 <ByteDataWrite>:
+}
+void ByteDataWrite(uint8_t data)
+{
+ 190:	cf 93       	push	r28
+ 192:	df 93       	push	r29
+ 194:	d8 2f       	mov	r29, r24
+ 196:	c8 e0       	ldi	r28, 0x08	; 8
+	for(uint8_t i = 0; i < 8; i++){
+		if(data & 0b10000000)
+ 198:	dd 23       	and	r29, r29
+ 19a:	14 f4       	brge	.+4      	; 0x1a0 <ByteDataWrite+0x10>
+		set_bit(DATA);
+ 19c:	1d 9a       	sbi	0x03, 5	; 3
+ 19e:	01 c0       	rjmp	.+2      	; 0x1a2 <ByteDataWrite+0x12>
+		else
+		clear_bit(DATA);
+ 1a0:	1d 98       	cbi	0x03, 5	; 3
+
+		ShiftClock();
+ 1a2:	f0 df       	rcall	.-32     	; 0x184 <ShiftClock>
+		data = data << 1;
+ 1a4:	dd 0f       	add	r29, r29
+ 1a6:	c1 50       	subi	r28, 0x01	; 1
+	}
+
+	LatchClock();
+ 1a8:	b9 f7       	brne	.-18     	; 0x198 <ByteDataWrite+0x8>
+ 1aa:	ef df       	rcall	.-34     	; 0x18a <LatchClock>
+}
+ 1ac:	df 91       	pop	r29
+ 1ae:	cf 91       	pop	r28
+ 1b0:	08 95       	ret
+
+000001b2 <dotMatrix_Init>:
+
+void dotMatrix_Init()
+{
+	REGISTER_DDR |= _BV(SHIFT_CLOCK) | _BV(LATCH_CLOCK) | _BV(DATA);
+ 1b2:	82 b1       	in	r24, 0x02	; 2
+ 1b4:	80 6e       	ori	r24, 0xE0	; 224
+ 1b6:	82 b9       	out	0x02, r24	; 2
+ 1b8:	08 95       	ret
+
+000001ba <slide_Data_Welcome>:
+}
+
+void slide_Data_Welcome(int pattern_index){
+ 1ba:	ef 92       	push	r14
+ 1bc:	ff 92       	push	r15
+ 1be:	0f 93       	push	r16
+ 1c0:	1f 93       	push	r17
+ 1c2:	cf 93       	push	r28
+ 1c4:	df 93       	push	r29
+ 1c6:	7c 01       	movw	r14, r24
+	for(int i = 0; i < 8; i++){
+ 1c8:	c0 e0       	ldi	r28, 0x00	; 0
+ 1ca:	d0 e0       	ldi	r29, 0x00	; 0
+		uint8_t col_data = ~(1 << i);
+		
+		ByteDataWrite(col_data);
+ 1cc:	01 e0       	ldi	r16, 0x01	; 1
+ 1ce:	10 e0       	ldi	r17, 0x00	; 0
+ 1d0:	c8 01       	movw	r24, r16
+ 1d2:	0c 2e       	mov	r0, r28
+ 1d4:	02 c0       	rjmp	.+4      	; 0x1da <slide_Data_Welcome+0x20>
+ 1d6:	88 0f       	add	r24, r24
+ 1d8:	99 1f       	adc	r25, r25
+ 1da:	0a 94       	dec	r0
+ 1dc:	e2 f7       	brpl	.-8      	; 0x1d6 <slide_Data_Welcome+0x1c>
+ 1de:	80 95       	com	r24
+ 1e0:	d7 df       	rcall	.-82     	; 0x190 <ByteDataWrite>
+		ByteDataWrite(txt_welcome[(pattern_index + i) % (txt_welcomesize)]);
+ 1e2:	c7 01       	movw	r24, r14
+ 1e4:	8c 0f       	add	r24, r28
+ 1e6:	9d 1f       	adc	r25, r29
+ 1e8:	60 91 0a 01 	lds	r22, 0x010A	; 0x80010a <txt_welcomesize>
+ 1ec:	70 e0       	ldi	r23, 0x00	; 0
+ 1ee:	a7 d4       	rcall	.+2382   	; 0xb3e <__divmodhi4>
+ 1f0:	fc 01       	movw	r30, r24
+ 1f2:	e5 5f       	subi	r30, 0xF5	; 245
+ 1f4:	fc 4f       	sbci	r31, 0xFC	; 252
+ 1f6:	80 81       	ld	r24, Z
+ 1f8:	cb df       	rcall	.-106    	; 0x190 <ByteDataWrite>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1fa:	8f ec       	ldi	r24, 0xCF	; 207
+ 1fc:	97 e0       	ldi	r25, 0x07	; 7
+ 1fe:	01 97       	sbiw	r24, 0x01	; 1
+ 200:	f1 f7       	brne	.-4      	; 0x1fe <slide_Data_Welcome+0x44>
+ 202:	00 c0       	rjmp	.+0      	; 0x204 <slide_Data_Welcome+0x4a>
+ 204:	00 00       	nop
+{
+	REGISTER_DDR |= _BV(SHIFT_CLOCK) | _BV(LATCH_CLOCK) | _BV(DATA);
+}
+
+void slide_Data_Welcome(int pattern_index){
+	for(int i = 0; i < 8; i++){
+ 206:	21 96       	adiw	r28, 0x01	; 1
+ 208:	c8 30       	cpi	r28, 0x08	; 8
+ 20a:	d1 05       	cpc	r29, r1
+		ByteDataWrite(col_data);
+		ByteDataWrite(txt_welcome[(pattern_index + i) % (txt_welcomesize)]);
+
+		_delay_us(500);
+	}
+	ByteDataWrite(0);
+ 20c:	09 f7       	brne	.-62     	; 0x1d0 <slide_Data_Welcome+0x16>
+ 20e:	80 e0       	ldi	r24, 0x00	; 0
+ 210:	bf df       	rcall	.-130    	; 0x190 <ByteDataWrite>
+}
+ 212:	df 91       	pop	r29
+ 214:	cf 91       	pop	r28
+ 216:	1f 91       	pop	r17
+ 218:	0f 91       	pop	r16
+ 21a:	ff 90       	pop	r15
+ 21c:	ef 90       	pop	r14
+ 21e:	08 95       	ret
+
+00000220 <slide_Data_Dead>:
+
+void slide_Data_Dead(int pattern_index){
+ 220:	ef 92       	push	r14
+ 222:	ff 92       	push	r15
+ 224:	0f 93       	push	r16
+ 226:	1f 93       	push	r17
+ 228:	cf 93       	push	r28
+ 22a:	df 93       	push	r29
+ 22c:	7c 01       	movw	r14, r24
+	for(int i = 0; i < 8; i++){
+ 22e:	c0 e0       	ldi	r28, 0x00	; 0
+ 230:	d0 e0       	ldi	r29, 0x00	; 0
+		uint8_t col_data = ~(1 << i);
+		
+		ByteDataWrite(col_data);
+ 232:	01 e0       	ldi	r16, 0x01	; 1
+ 234:	10 e0       	ldi	r17, 0x00	; 0
+ 236:	c8 01       	movw	r24, r16
+ 238:	0c 2e       	mov	r0, r28
+ 23a:	02 c0       	rjmp	.+4      	; 0x240 <slide_Data_Dead+0x20>
+ 23c:	88 0f       	add	r24, r24
+ 23e:	99 1f       	adc	r25, r25
+ 240:	0a 94       	dec	r0
+ 242:	e2 f7       	brpl	.-8      	; 0x23c <slide_Data_Dead+0x1c>
+ 244:	80 95       	com	r24
+ 246:	a4 df       	rcall	.-184    	; 0x190 <ByteDataWrite>
+		ByteDataWrite(txt_dead[(pattern_index + i) % (txt_deadsize)]);
+ 248:	c7 01       	movw	r24, r14
+ 24a:	8c 0f       	add	r24, r28
+ 24c:	9d 1f       	adc	r25, r29
+ 24e:	60 91 09 01 	lds	r22, 0x0109	; 0x800109 <txt_deadsize>
+ 252:	70 e0       	ldi	r23, 0x00	; 0
+ 254:	74 d4       	rcall	.+2280   	; 0xb3e <__divmodhi4>
+ 256:	fc 01       	movw	r30, r24
+ 258:	ed 57       	subi	r30, 0x7D	; 125
+ 25a:	fc 4f       	sbci	r31, 0xFC	; 252
+ 25c:	80 81       	ld	r24, Z
+ 25e:	98 df       	rcall	.-208    	; 0x190 <ByteDataWrite>
+ 260:	8f ec       	ldi	r24, 0xCF	; 207
+ 262:	97 e0       	ldi	r25, 0x07	; 7
+ 264:	01 97       	sbiw	r24, 0x01	; 1
+ 266:	f1 f7       	brne	.-4      	; 0x264 <slide_Data_Dead+0x44>
+ 268:	00 c0       	rjmp	.+0      	; 0x26a <slide_Data_Dead+0x4a>
+ 26a:	00 00       	nop
+	}
+	ByteDataWrite(0);
+}
+
+void slide_Data_Dead(int pattern_index){
+	for(int i = 0; i < 8; i++){
+ 26c:	21 96       	adiw	r28, 0x01	; 1
+ 26e:	c8 30       	cpi	r28, 0x08	; 8
+ 270:	d1 05       	cpc	r29, r1
+		ByteDataWrite(col_data);
+		ByteDataWrite(txt_dead[(pattern_index + i) % (txt_deadsize)]);
+
+		_delay_us(500);
+	}
+	ByteDataWrite(0);
+ 272:	09 f7       	brne	.-62     	; 0x236 <slide_Data_Dead+0x16>
+ 274:	80 e0       	ldi	r24, 0x00	; 0
+ 276:	8c df       	rcall	.-232    	; 0x190 <ByteDataWrite>
+}
+ 278:	df 91       	pop	r29
+ 27a:	cf 91       	pop	r28
+ 27c:	1f 91       	pop	r17
+ 27e:	0f 91       	pop	r16
+ 280:	ff 90       	pop	r15
+ 282:	ef 90       	pop	r14
+ 284:	08 95       	ret
+
+00000286 <slide_Data_Play>:
+
+void slide_Data_Play(int pattern_index){
+ 286:	ef 92       	push	r14
+ 288:	ff 92       	push	r15
+ 28a:	0f 93       	push	r16
+ 28c:	1f 93       	push	r17
+ 28e:	cf 93       	push	r28
+ 290:	df 93       	push	r29
+ 292:	7c 01       	movw	r14, r24
+	for(int i = 0; i < 8; i++){
+ 294:	c0 e0       	ldi	r28, 0x00	; 0
+ 296:	d0 e0       	ldi	r29, 0x00	; 0
+		uint8_t col_data = ~(1 << i);
+		
+		ByteDataWrite(col_data);
+ 298:	01 e0       	ldi	r16, 0x01	; 1
+ 29a:	10 e0       	ldi	r17, 0x00	; 0
+ 29c:	c8 01       	movw	r24, r16
+ 29e:	0c 2e       	mov	r0, r28
+ 2a0:	02 c0       	rjmp	.+4      	; 0x2a6 <slide_Data_Play+0x20>
+ 2a2:	88 0f       	add	r24, r24
+ 2a4:	99 1f       	adc	r25, r25
+ 2a6:	0a 94       	dec	r0
+ 2a8:	e2 f7       	brpl	.-8      	; 0x2a2 <slide_Data_Play+0x1c>
+ 2aa:	80 95       	com	r24
+ 2ac:	71 df       	rcall	.-286    	; 0x190 <ByteDataWrite>
+		ByteDataWrite(txt_play[(pattern_index + i) % (txt_playsize)]);
+ 2ae:	c7 01       	movw	r24, r14
+ 2b0:	8c 0f       	add	r24, r28
+ 2b2:	9d 1f       	adc	r25, r29
+ 2b4:	60 91 08 01 	lds	r22, 0x0108	; 0x800108 <txt_playsize>
+ 2b8:	70 e0       	ldi	r23, 0x00	; 0
+ 2ba:	41 d4       	rcall	.+2178   	; 0xb3e <__divmodhi4>
+ 2bc:	fc 01       	movw	r30, r24
+ 2be:	e5 59       	subi	r30, 0x95	; 149
+ 2c0:	fc 4f       	sbci	r31, 0xFC	; 252
+ 2c2:	80 81       	ld	r24, Z
+ 2c4:	65 df       	rcall	.-310    	; 0x190 <ByteDataWrite>
+ 2c6:	8f ec       	ldi	r24, 0xCF	; 207
+ 2c8:	97 e0       	ldi	r25, 0x07	; 7
+ 2ca:	01 97       	sbiw	r24, 0x01	; 1
+ 2cc:	f1 f7       	brne	.-4      	; 0x2ca <slide_Data_Play+0x44>
+ 2ce:	00 c0       	rjmp	.+0      	; 0x2d0 <slide_Data_Play+0x4a>
+ 2d0:	00 00       	nop
+	}
+	ByteDataWrite(0);
+}
+
+void slide_Data_Play(int pattern_index){
+	for(int i = 0; i < 8; i++){
+ 2d2:	21 96       	adiw	r28, 0x01	; 1
+ 2d4:	c8 30       	cpi	r28, 0x08	; 8
+ 2d6:	d1 05       	cpc	r29, r1
+		ByteDataWrite(col_data);
+		ByteDataWrite(txt_play[(pattern_index + i) % (txt_playsize)]);
+
+		_delay_us(500);
+	}
+	ByteDataWrite(0);
+ 2d8:	09 f7       	brne	.-62     	; 0x29c <slide_Data_Play+0x16>
+ 2da:	80 e0       	ldi	r24, 0x00	; 0
+ 2dc:	59 df       	rcall	.-334    	; 0x190 <ByteDataWrite>
+}
+ 2de:	df 91       	pop	r29
+ 2e0:	cf 91       	pop	r28
+ 2e2:	1f 91       	pop	r17
+ 2e4:	0f 91       	pop	r16
+ 2e6:	ff 90       	pop	r15
+ 2e8:	ef 90       	pop	r14
+ 2ea:	08 95       	ret
+
+000002ec <slide_Data_Success>:
+
+void slide_Data_Success(int pattern_index){
+ 2ec:	ef 92       	push	r14
+ 2ee:	ff 92       	push	r15
+ 2f0:	0f 93       	push	r16
+ 2f2:	1f 93       	push	r17
+ 2f4:	cf 93       	push	r28
+ 2f6:	df 93       	push	r29
+ 2f8:	7c 01       	movw	r14, r24
+	for(int i = 0; i < 8; i++){
+ 2fa:	c0 e0       	ldi	r28, 0x00	; 0
+ 2fc:	d0 e0       	ldi	r29, 0x00	; 0
+		uint8_t col_data = ~(1 << i);
+		
+		ByteDataWrite(col_data);
+ 2fe:	01 e0       	ldi	r16, 0x01	; 1
+ 300:	10 e0       	ldi	r17, 0x00	; 0
+ 302:	c8 01       	movw	r24, r16
+ 304:	0c 2e       	mov	r0, r28
+ 306:	02 c0       	rjmp	.+4      	; 0x30c <slide_Data_Success+0x20>
+ 308:	88 0f       	add	r24, r24
+ 30a:	99 1f       	adc	r25, r25
+ 30c:	0a 94       	dec	r0
+ 30e:	e2 f7       	brpl	.-8      	; 0x308 <slide_Data_Success+0x1c>
+ 310:	80 95       	com	r24
+ 312:	3e df       	rcall	.-388    	; 0x190 <ByteDataWrite>
+		ByteDataWrite(txt_success[(pattern_index + i) % (txt_successsize)]);
+ 314:	c7 01       	movw	r24, r14
+ 316:	8c 0f       	add	r24, r28
+ 318:	9d 1f       	adc	r25, r29
+ 31a:	60 91 06 01 	lds	r22, 0x0106	; 0x800106 <txt_successsize>
+ 31e:	70 e0       	ldi	r23, 0x00	; 0
+ 320:	0e d4       	rcall	.+2076   	; 0xb3e <__divmodhi4>
+ 322:	fc 01       	movw	r30, r24
+ 324:	e5 5d       	subi	r30, 0xD5	; 213
+ 326:	fc 4f       	sbci	r31, 0xFC	; 252
+ 328:	80 81       	ld	r24, Z
+ 32a:	32 df       	rcall	.-412    	; 0x190 <ByteDataWrite>
+ 32c:	8f ec       	ldi	r24, 0xCF	; 207
+ 32e:	97 e0       	ldi	r25, 0x07	; 7
+ 330:	01 97       	sbiw	r24, 0x01	; 1
+ 332:	f1 f7       	brne	.-4      	; 0x330 <slide_Data_Success+0x44>
+ 334:	00 c0       	rjmp	.+0      	; 0x336 <slide_Data_Success+0x4a>
+ 336:	00 00       	nop
+	}
+	ByteDataWrite(0);
+}
+
+void slide_Data_Success(int pattern_index){
+	for(int i = 0; i < 8; i++){
+ 338:	21 96       	adiw	r28, 0x01	; 1
+ 33a:	c8 30       	cpi	r28, 0x08	; 8
+ 33c:	d1 05       	cpc	r29, r1
+		ByteDataWrite(col_data);
+		ByteDataWrite(txt_success[(pattern_index + i) % (txt_successsize)]);
+
+		_delay_us(500);
+	}
+	ByteDataWrite(0);
+ 33e:	09 f7       	brne	.-62     	; 0x302 <slide_Data_Success+0x16>
+ 340:	80 e0       	ldi	r24, 0x00	; 0
+ 342:	26 df       	rcall	.-436    	; 0x190 <ByteDataWrite>
+}
+ 344:	df 91       	pop	r29
+ 346:	cf 91       	pop	r28
+ 348:	1f 91       	pop	r17
+ 34a:	0f 91       	pop	r16
+ 34c:	ff 90       	pop	r15
+ 34e:	ef 90       	pop	r14
+ 350:	08 95       	ret
+
+00000352 <slide_Data_Score>:
+
+void slide_Data_Score(int pattern_index, uint8_t _eat_count){
+ 352:	ef 92       	push	r14
+ 354:	ff 92       	push	r15
+ 356:	0f 93       	push	r16
+ 358:	1f 93       	push	r17
+ 35a:	cf 93       	push	r28
+ 35c:	df 93       	push	r29
+ 35e:	06 2f       	mov	r16, r22
+ 360:	10 e0       	ldi	r17, 0x00	; 0
+ 362:	00 0f       	add	r16, r16
+ 364:	11 1f       	adc	r17, r17
+ 366:	00 0f       	add	r16, r16
+ 368:	11 1f       	adc	r17, r17
+ 36a:	00 0f       	add	r16, r16
+ 36c:	11 1f       	adc	r17, r17
+ 36e:	05 5f       	subi	r16, 0xF5	; 245
+ 370:	1e 4f       	sbci	r17, 0xFE	; 254
+	for(int i = 0; i < 8; i++){
+ 372:	c0 e0       	ldi	r28, 0x00	; 0
+ 374:	d0 e0       	ldi	r29, 0x00	; 0
+		uint8_t col_data = ~(1 << i);
+		
+		ByteDataWrite(col_data);
+ 376:	ee 24       	eor	r14, r14
+ 378:	e3 94       	inc	r14
+ 37a:	f1 2c       	mov	r15, r1
+ 37c:	c7 01       	movw	r24, r14
+ 37e:	0c 2e       	mov	r0, r28
+ 380:	02 c0       	rjmp	.+4      	; 0x386 <slide_Data_Score+0x34>
+ 382:	88 0f       	add	r24, r24
+ 384:	99 1f       	adc	r25, r25
+ 386:	0a 94       	dec	r0
+ 388:	e2 f7       	brpl	.-8      	; 0x382 <slide_Data_Score+0x30>
+ 38a:	80 95       	com	r24
+ 38c:	01 df       	rcall	.-510    	; 0x190 <ByteDataWrite>
+		ByteDataWrite(txt_score[i+ (_eat_count * 8)]);
+ 38e:	f8 01       	movw	r30, r16
+ 390:	81 91       	ld	r24, Z+
+ 392:	8f 01       	movw	r16, r30
+ 394:	fd de       	rcall	.-518    	; 0x190 <ByteDataWrite>
+ 396:	8f ec       	ldi	r24, 0xCF	; 207
+ 398:	97 e0       	ldi	r25, 0x07	; 7
+ 39a:	01 97       	sbiw	r24, 0x01	; 1
+ 39c:	f1 f7       	brne	.-4      	; 0x39a <slide_Data_Score+0x48>
+ 39e:	00 c0       	rjmp	.+0      	; 0x3a0 <slide_Data_Score+0x4e>
+ 3a0:	00 00       	nop
+	}
+	ByteDataWrite(0);
+}
+
+void slide_Data_Score(int pattern_index, uint8_t _eat_count){
+	for(int i = 0; i < 8; i++){
+ 3a2:	21 96       	adiw	r28, 0x01	; 1
+ 3a4:	c8 30       	cpi	r28, 0x08	; 8
+ 3a6:	d1 05       	cpc	r29, r1
+		ByteDataWrite(col_data);
+		ByteDataWrite(txt_score[i+ (_eat_count * 8)]);
+
+		_delay_us(500);
+	}
+	ByteDataWrite(0);
+ 3a8:	49 f7       	brne	.-46     	; 0x37c <slide_Data_Score+0x2a>
+ 3aa:	80 e0       	ldi	r24, 0x00	; 0
+ 3ac:	f1 de       	rcall	.-542    	; 0x190 <ByteDataWrite>
+}
+ 3ae:	df 91       	pop	r29
+ 3b0:	cf 91       	pop	r28
+ 3b2:	1f 91       	pop	r17
+ 3b4:	0f 91       	pop	r16
+ 3b6:	ff 90       	pop	r15
+ 3b8:	ef 90       	pop	r14
+ 3ba:	08 95       	ret
+
+000003bc <display_Dot>:
+
+void display_Dot(uint8_t _col, uint8_t _row, uint8_t _f_col, uint8_t _f_row, uint8_t _head_Coord[][2], uint8_t _eat_count){
+ 3bc:	ef 92       	push	r14
+ 3be:	ff 92       	push	r15
+ 3c0:	0f 93       	push	r16
+ 3c2:	1f 93       	push	r17
+ 3c4:	cf 93       	push	r28
+ 3c6:	df 93       	push	r29
+ 3c8:	cd b7       	in	r28, 0x3d	; 61
+ 3ca:	de b7       	in	r29, 0x3e	; 62
+ 3cc:	28 97       	sbiw	r28, 0x08	; 8
+ 3ce:	0f b6       	in	r0, 0x3f	; 63
+ 3d0:	f8 94       	cli
+ 3d2:	de bf       	out	0x3e, r29	; 62
+ 3d4:	0f be       	out	0x3f, r0	; 63
+ 3d6:	cd bf       	out	0x3d, r28	; 61
+	uint8_t map_data[8] = {0,};
+ 3d8:	fe 01       	movw	r30, r28
+ 3da:	31 96       	adiw	r30, 0x01	; 1
+ 3dc:	98 e0       	ldi	r25, 0x08	; 8
+ 3de:	df 01       	movw	r26, r30
+ 3e0:	1d 92       	st	X+, r1
+ 3e2:	9a 95       	dec	r25
+ 3e4:	e9 f7       	brne	.-6      	; 0x3e0 <display_Dot+0x24>
+	
+	map_data[_col] |= (1<<_row);
+ 3e6:	df 01       	movw	r26, r30
+ 3e8:	a8 0f       	add	r26, r24
+ 3ea:	b1 1d       	adc	r27, r1
+ 3ec:	81 e0       	ldi	r24, 0x01	; 1
+ 3ee:	90 e0       	ldi	r25, 0x00	; 0
+ 3f0:	38 2f       	mov	r19, r24
+ 3f2:	01 c0       	rjmp	.+2      	; 0x3f6 <display_Dot+0x3a>
+ 3f4:	33 0f       	add	r19, r19
+ 3f6:	6a 95       	dec	r22
+ 3f8:	ea f7       	brpl	.-6      	; 0x3f4 <display_Dot+0x38>
+ 3fa:	3c 93       	st	X, r19
+	map_data[_f_col] |= (1<<_f_row);
+ 3fc:	e4 0f       	add	r30, r20
+ 3fe:	f1 1d       	adc	r31, r1
+ 400:	02 c0       	rjmp	.+4      	; 0x406 <__LOCK_REGION_LENGTH__+0x6>
+ 402:	88 0f       	add	r24, r24
+ 404:	99 1f       	adc	r25, r25
+ 406:	2a 95       	dec	r18
+ 408:	e2 f7       	brpl	.-8      	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 40a:	90 81       	ld	r25, Z
+ 40c:	89 2b       	or	r24, r25
+ 40e:	80 83       	st	Z, r24
+	for(int i = 0; i < _eat_count; i++){
+ 410:	ee 20       	and	r14, r14
+ 412:	09 f4       	brne	.+2      	; 0x416 <__LOCK_REGION_LENGTH__+0x16>
+ 414:	40 c0       	rjmp	.+128    	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+ 416:	f8 01       	movw	r30, r16
+ 418:	f1 2c       	mov	r15, r1
+ 41a:	ee 0c       	add	r14, r14
+ 41c:	ff 1c       	adc	r15, r15
+ 41e:	0e 0d       	add	r16, r14
+ 420:	1f 1d       	adc	r17, r15
+		map_data[_head_Coord[i+1][0]] |= (1<<_head_Coord[i+1][1]);
+ 422:	21 e0       	ldi	r18, 0x01	; 1
+ 424:	30 e0       	ldi	r19, 0x00	; 0
+ 426:	82 81       	ldd	r24, Z+2	; 0x02
+ 428:	a1 e0       	ldi	r26, 0x01	; 1
+ 42a:	b0 e0       	ldi	r27, 0x00	; 0
+ 42c:	ac 0f       	add	r26, r28
+ 42e:	bd 1f       	adc	r27, r29
+ 430:	a8 0f       	add	r26, r24
+ 432:	b1 1d       	adc	r27, r1
+ 434:	c9 01       	movw	r24, r18
+ 436:	03 80       	ldd	r0, Z+3	; 0x03
+ 438:	02 c0       	rjmp	.+4      	; 0x43e <__LOCK_REGION_LENGTH__+0x3e>
+ 43a:	88 0f       	add	r24, r24
+ 43c:	99 1f       	adc	r25, r25
+ 43e:	0a 94       	dec	r0
+ 440:	e2 f7       	brpl	.-8      	; 0x43a <__LOCK_REGION_LENGTH__+0x3a>
+ 442:	9c 91       	ld	r25, X
+ 444:	89 2b       	or	r24, r25
+ 446:	8c 93       	st	X, r24
+ 448:	32 96       	adiw	r30, 0x02	; 2
+void display_Dot(uint8_t _col, uint8_t _row, uint8_t _f_col, uint8_t _f_row, uint8_t _head_Coord[][2], uint8_t _eat_count){
+	uint8_t map_data[8] = {0,};
+	
+	map_data[_col] |= (1<<_row);
+	map_data[_f_col] |= (1<<_f_row);
+	for(int i = 0; i < _eat_count; i++){
+ 44a:	e0 17       	cp	r30, r16
+ 44c:	f1 07       	cpc	r31, r17
+ 44e:	59 f7       	brne	.-42     	; 0x426 <__LOCK_REGION_LENGTH__+0x26>
+ 450:	22 c0       	rjmp	.+68     	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+		map_data[_head_Coord[i+1][0]] |= (1<<_head_Coord[i+1][1]);
+	}
+	for(int i = 0; i < 8; i++){
+		uint8_t col_data = ~(1 << i);
+		ByteDataWrite(col_data);
+ 452:	c7 01       	movw	r24, r14
+ 454:	00 2e       	mov	r0, r16
+ 456:	02 c0       	rjmp	.+4      	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+ 458:	88 0f       	add	r24, r24
+ 45a:	99 1f       	adc	r25, r25
+ 45c:	0a 94       	dec	r0
+ 45e:	e2 f7       	brpl	.-8      	; 0x458 <__LOCK_REGION_LENGTH__+0x58>
+ 460:	80 95       	com	r24
+ 462:	96 de       	rcall	.-724    	; 0x190 <ByteDataWrite>
+		ByteDataWrite(map_data[i % sizeof(map_data)]);
+ 464:	f8 01       	movw	r30, r16
+ 466:	e7 70       	andi	r30, 0x07	; 7
+ 468:	ff 27       	eor	r31, r31
+ 46a:	81 e0       	ldi	r24, 0x01	; 1
+ 46c:	90 e0       	ldi	r25, 0x00	; 0
+ 46e:	8c 0f       	add	r24, r28
+ 470:	9d 1f       	adc	r25, r29
+ 472:	e8 0f       	add	r30, r24
+ 474:	f9 1f       	adc	r31, r25
+ 476:	80 81       	ld	r24, Z
+ 478:	8b de       	rcall	.-746    	; 0x190 <ByteDataWrite>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 47a:	af e9       	ldi	r26, 0x9F	; 159
+ 47c:	bf e0       	ldi	r27, 0x0F	; 15
+ 47e:	11 97       	sbiw	r26, 0x01	; 1
+ 480:	f1 f7       	brne	.-4      	; 0x47e <__LOCK_REGION_LENGTH__+0x7e>
+ 482:	00 c0       	rjmp	.+0      	; 0x484 <__LOCK_REGION_LENGTH__+0x84>
+ 484:	00 00       	nop
+	map_data[_col] |= (1<<_row);
+	map_data[_f_col] |= (1<<_f_row);
+	for(int i = 0; i < _eat_count; i++){
+		map_data[_head_Coord[i+1][0]] |= (1<<_head_Coord[i+1][1]);
+	}
+	for(int i = 0; i < 8; i++){
+ 486:	0f 5f       	subi	r16, 0xFF	; 255
+ 488:	1f 4f       	sbci	r17, 0xFF	; 255
+ 48a:	08 30       	cpi	r16, 0x08	; 8
+ 48c:	11 05       	cpc	r17, r1
+		uint8_t col_data = ~(1 << i);
+		ByteDataWrite(col_data);
+		ByteDataWrite(map_data[i % sizeof(map_data)]);
+		_delay_ms(1);
+	}
+	ByteDataWrite(0);
+ 48e:	09 f7       	brne	.-62     	; 0x452 <__LOCK_REGION_LENGTH__+0x52>
+ 490:	80 e0       	ldi	r24, 0x00	; 0
+ 492:	7e de       	rcall	.-772    	; 0x190 <ByteDataWrite>
+}
+ 494:	06 c0       	rjmp	.+12     	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+		_delay_us(500);
+	}
+	ByteDataWrite(0);
+}
+
+void display_Dot(uint8_t _col, uint8_t _row, uint8_t _f_col, uint8_t _f_row, uint8_t _head_Coord[][2], uint8_t _eat_count){
+ 496:	00 e0       	ldi	r16, 0x00	; 0
+ 498:	10 e0       	ldi	r17, 0x00	; 0
+	for(int i = 0; i < _eat_count; i++){
+		map_data[_head_Coord[i+1][0]] |= (1<<_head_Coord[i+1][1]);
+	}
+	for(int i = 0; i < 8; i++){
+		uint8_t col_data = ~(1 << i);
+		ByteDataWrite(col_data);
+ 49a:	ee 24       	eor	r14, r14
+ 49c:	e3 94       	inc	r14
+ 49e:	f1 2c       	mov	r15, r1
+ 4a0:	d8 cf       	rjmp	.-80     	; 0x452 <__LOCK_REGION_LENGTH__+0x52>
+		ByteDataWrite(map_data[i % sizeof(map_data)]);
+		_delay_ms(1);
+	}
+	ByteDataWrite(0);
+}
+ 4a2:	28 96       	adiw	r28, 0x08	; 8
+ 4a4:	0f b6       	in	r0, 0x3f	; 63
+ 4a6:	f8 94       	cli
+ 4a8:	de bf       	out	0x3e, r29	; 62
+ 4aa:	0f be       	out	0x3f, r0	; 63
+ 4ac:	cd bf       	out	0x3d, r28	; 61
+ 4ae:	df 91       	pop	r29
+ 4b0:	cf 91       	pop	r28
+ 4b2:	1f 91       	pop	r17
+ 4b4:	0f 91       	pop	r16
+ 4b6:	ff 90       	pop	r15
+ 4b8:	ef 90       	pop	r14
+ 4ba:	08 95       	ret
+
+000004bc <print_Data_Num>:
+
+void print_Data_Num(uint8_t num_index, uint8_t diff_num){
+ 4bc:	ef 92       	push	r14
+ 4be:	ff 92       	push	r15
+ 4c0:	0f 93       	push	r16
+ 4c2:	1f 93       	push	r17
+ 4c4:	cf 93       	push	r28
+ 4c6:	df 93       	push	r29
+ 4c8:	06 2f       	mov	r16, r22
+ 4ca:	10 e0       	ldi	r17, 0x00	; 0
+ 4cc:	00 0f       	add	r16, r16
+ 4ce:	11 1f       	adc	r17, r17
+ 4d0:	00 0f       	add	r16, r16
+ 4d2:	11 1f       	adc	r17, r17
+ 4d4:	00 0f       	add	r16, r16
+ 4d6:	11 1f       	adc	r17, r17
+ 4d8:	0d 5a       	subi	r16, 0xAD	; 173
+ 4da:	1c 4f       	sbci	r17, 0xFC	; 252
+	for(int i = 0; i < 8; i++){
+ 4dc:	c0 e0       	ldi	r28, 0x00	; 0
+ 4de:	d0 e0       	ldi	r29, 0x00	; 0
+		uint8_t col_data = ~(1 << i);
+		
+		ByteDataWrite(col_data);
+ 4e0:	ee 24       	eor	r14, r14
+ 4e2:	e3 94       	inc	r14
+ 4e4:	f1 2c       	mov	r15, r1
+ 4e6:	c7 01       	movw	r24, r14
+ 4e8:	0c 2e       	mov	r0, r28
+ 4ea:	02 c0       	rjmp	.+4      	; 0x4f0 <print_Data_Num+0x34>
+ 4ec:	88 0f       	add	r24, r24
+ 4ee:	99 1f       	adc	r25, r25
+ 4f0:	0a 94       	dec	r0
+ 4f2:	e2 f7       	brpl	.-8      	; 0x4ec <print_Data_Num+0x30>
+ 4f4:	80 95       	com	r24
+ 4f6:	4c de       	rcall	.-872    	; 0x190 <ByteDataWrite>
+		ByteDataWrite(txt_num[i+(diff_num*8)]);
+ 4f8:	f8 01       	movw	r30, r16
+ 4fa:	81 91       	ld	r24, Z+
+ 4fc:	8f 01       	movw	r16, r30
+ 4fe:	48 de       	rcall	.-880    	; 0x190 <ByteDataWrite>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 500:	8f e3       	ldi	r24, 0x3F	; 63
+ 502:	96 e0       	ldi	r25, 0x06	; 6
+ 504:	01 97       	sbiw	r24, 0x01	; 1
+ 506:	f1 f7       	brne	.-4      	; 0x504 <print_Data_Num+0x48>
+ 508:	00 c0       	rjmp	.+0      	; 0x50a <print_Data_Num+0x4e>
+ 50a:	00 00       	nop
+	}
+	ByteDataWrite(0);
+}
+
+void print_Data_Num(uint8_t num_index, uint8_t diff_num){
+	for(int i = 0; i < 8; i++){
+ 50c:	21 96       	adiw	r28, 0x01	; 1
+ 50e:	c8 30       	cpi	r28, 0x08	; 8
+ 510:	d1 05       	cpc	r29, r1
+		
+		ByteDataWrite(col_data);
+		ByteDataWrite(txt_num[i+(diff_num*8)]);
+		_delay_us(400);
+	}
+	ByteDataWrite(0);
+ 512:	49 f7       	brne	.-46     	; 0x4e6 <print_Data_Num+0x2a>
+ 514:	80 e0       	ldi	r24, 0x00	; 0
+ 516:	3c de       	rcall	.-904    	; 0x190 <ByteDataWrite>
+ 518:	df 91       	pop	r29
+ 51a:	cf 91       	pop	r28
+ 51c:	1f 91       	pop	r17
+ 51e:	0f 91       	pop	r16
+ 520:	ff 90       	pop	r15
+ 522:	ef 90       	pop	r14
+ 524:	08 95       	ret
+
+00000526 <__vector_15>:
+
+enum { UPSIDE, DOWNSIDE, RIGHTSIDE, LEFTSIDE } DIRECTION;
+enum { ALIVE, DEAD } LIFE;
+enum { PLAY, STOP, START, SUCCESS } STATE;
+
+ISR(TIMER0_COMP_vect){
+ 526:	1f 92       	push	r1
+ 528:	0f 92       	push	r0
+ 52a:	0f b6       	in	r0, 0x3f	; 63
+ 52c:	0f 92       	push	r0
+ 52e:	11 24       	eor	r1, r1
+ 530:	0b b6       	in	r0, 0x3b	; 59
+ 532:	0f 92       	push	r0
+ 534:	2f 93       	push	r18
+ 536:	3f 93       	push	r19
+ 538:	4f 93       	push	r20
+ 53a:	5f 93       	push	r21
+ 53c:	6f 93       	push	r22
+ 53e:	7f 93       	push	r23
+ 540:	8f 93       	push	r24
+ 542:	9f 93       	push	r25
+ 544:	af 93       	push	r26
+ 546:	bf 93       	push	r27
+ 548:	ef 93       	push	r30
+ 54a:	ff 93       	push	r31
+	incMilliSec();
+ 54c:	b2 d2       	rcall	.+1380   	; 0xab2 <incMilliSec>
+	incTime();
+ 54e:	ce d2       	rcall	.+1436   	; 0xaec <incTime>
+ 550:	ff 91       	pop	r31
+}
+ 552:	ef 91       	pop	r30
+ 554:	bf 91       	pop	r27
+ 556:	af 91       	pop	r26
+ 558:	9f 91       	pop	r25
+ 55a:	8f 91       	pop	r24
+ 55c:	7f 91       	pop	r23
+ 55e:	6f 91       	pop	r22
+ 560:	5f 91       	pop	r21
+ 562:	4f 91       	pop	r20
+ 564:	3f 91       	pop	r19
+ 566:	2f 91       	pop	r18
+ 568:	0f 90       	pop	r0
+ 56a:	0b be       	out	0x3b, r0	; 59
+ 56c:	0f 90       	pop	r0
+ 56e:	0f be       	out	0x3f, r0	; 63
+ 570:	0f 90       	pop	r0
+ 572:	1f 90       	pop	r1
+ 574:	18 95       	reti
+
+00000576 <reset_Game>:
+ 576:	10 92 ec 03 	sts	0x03EC, r1	; 0x8003ec <col>
+}
+
+void reset_Game(){
+	// 초기화
+	col = 0;
+	row = 7;
+ 57a:	87 e0       	ldi	r24, 0x07	; 7
+ 57c:	80 93 d2 03 	sts	0x03D2, r24	; 0x8003d2 <row>
+ 580:	e5 ef       	ldi	r30, 0xF5	; 245
+ 582:	f3 e0       	ldi	r31, 0x03	; 3
+ 584:	85 e7       	ldi	r24, 0x75	; 117
+ 586:	94 e0       	ldi	r25, 0x04	; 4
+	for(int i = 0; i < SIZE; i++){
+		for(int j = 0; j < 2; j++){
+			head_Coord[i][j] = 0;
+ 588:	10 82       	st	Z, r1
+ 58a:	11 82       	std	Z+1, r1	; 0x01
+ 58c:	32 96       	adiw	r30, 0x02	; 2
+
+void reset_Game(){
+	// 초기화
+	col = 0;
+	row = 7;
+	for(int i = 0; i < SIZE; i++){
+ 58e:	8e 17       	cp	r24, r30
+ 590:	9f 07       	cpc	r25, r31
+ 592:	d1 f7       	brne	.-12     	; 0x588 <reset_Game+0x12>
+		for(int j = 0; j < 2; j++){
+			head_Coord[i][j] = 0;
+		}
+	}
+	eat_count = 0;
+ 594:	10 92 eb 03 	sts	0x03EB, r1	; 0x8003eb <eat_count>
+	dead_Index = 0;
+ 598:	10 92 e9 03 	sts	0x03E9, r1	; 0x8003e9 <dead_Index>
+	play_Index = 0;
+ 59c:	10 92 e8 03 	sts	0x03E8, r1	; 0x8003e8 <play_Index>
+	num_Index = 0;
+ 5a0:	10 92 e7 03 	sts	0x03E7, r1	; 0x8003e7 <num_Index>
+	success_Index = 0;
+ 5a4:	10 92 e6 03 	sts	0x03E6, r1	; 0x8003e6 <success_Index>
+	welcome_Index = 0;
+ 5a8:	10 92 e5 03 	sts	0x03E5, r1	; 0x8003e5 <welcome_Index>
+	score_Index = 0;
+ 5ac:	10 92 e4 03 	sts	0x03E4, r1	; 0x8003e4 <score_Index>
+	
+	reset_count = 0;
+ 5b0:	10 92 e3 03 	sts	0x03E3, r1	; 0x8003e3 <reset_count>
+	pcount = 0;
+ 5b4:	10 92 e2 03 	sts	0x03E2, r1	; 0x8003e2 <__data_end>
+	// 초기화 끝
+	
+	STATE = START;
+ 5b8:	82 e0       	ldi	r24, 0x02	; 2
+ 5ba:	80 93 f3 03 	sts	0x03F3, r24	; 0x8003f3 <STATE>
+	LIFE = ALIVE;
+ 5be:	10 92 76 04 	sts	0x0476, r1	; 0x800476 <LIFE>
+	DIRECTION = RIGHTSIDE; // 처음은 아래로 움직이기 시작
+ 5c2:	80 93 f2 03 	sts	0x03F2, r24	; 0x8003f2 <DIRECTION>
+ 5c6:	08 95       	ret
+
+000005c8 <getRandNum>:
+}
+
+uint8_t getRandNum(){
+	uint8_t num;
+	num = rand() % 8; // 0부터 8까지 랜덤한 수 생성
+ 5c8:	4a d3       	rcall	.+1684   	; 0xc5e <rand>
+	return num;
+ 5ca:	87 70       	andi	r24, 0x07	; 7
+ 5cc:	90 78       	andi	r25, 0x80	; 128
+ 5ce:	99 23       	and	r25, r25
+ 5d0:	24 f4       	brge	.+8      	; 0x5da <getRandNum+0x12>
+ 5d2:	01 97       	sbiw	r24, 0x01	; 1
+ 5d4:	88 6f       	ori	r24, 0xF8	; 248
+ 5d6:	9f 6f       	ori	r25, 0xFF	; 255
+ 5d8:	01 96       	adiw	r24, 0x01	; 1
+}
+ 5da:	08 95       	ret
+
+000005dc <display_Set_Diff>:
+
+void display_Set_Diff(uint16_t _prevMillisec){
+ 5dc:	cf 93       	push	r28
+ 5de:	df 93       	push	r29
+ 5e0:	ec 01       	movw	r28, r24
+	dead_Index = 0;
+ 5e2:	10 92 e9 03 	sts	0x03E9, r1	; 0x8003e9 <dead_Index>
+	play_Index = 0;
+ 5e6:	10 92 e8 03 	sts	0x03E8, r1	; 0x8003e8 <play_Index>
+	
+	if((millis() - _prevMillisec) > 100){
+ 5ea:	77 d2       	rcall	.+1262   	; 0xada <millis>
+ 5ec:	dc 01       	movw	r26, r24
+ 5ee:	cb 01       	movw	r24, r22
+ 5f0:	8c 1b       	sub	r24, r28
+ 5f2:	9d 0b       	sbc	r25, r29
+ 5f4:	a1 09       	sbc	r26, r1
+ 5f6:	b1 09       	sbc	r27, r1
+ 5f8:	85 36       	cpi	r24, 0x65	; 101
+ 5fa:	91 05       	cpc	r25, r1
+ 5fc:	a1 05       	cpc	r26, r1
+ 5fe:	b1 05       	cpc	r27, r1
+ 600:	58 f0       	brcs	.+22     	; 0x618 <display_Set_Diff+0x3c>
+		num_Index = ((num_Index + 1)  % ( txt_numsize ));
+ 602:	80 91 e7 03 	lds	r24, 0x03E7	; 0x8003e7 <num_Index>
+ 606:	90 e0       	ldi	r25, 0x00	; 0
+ 608:	01 96       	adiw	r24, 0x01	; 1
+ 60a:	60 91 07 01 	lds	r22, 0x0107	; 0x800107 <txt_numsize>
+ 60e:	70 e0       	ldi	r23, 0x00	; 0
+ 610:	96 d2       	rcall	.+1324   	; 0xb3e <__divmodhi4>
+ 612:	80 93 e7 03 	sts	0x03E7, r24	; 0x8003e7 <num_Index>
+		_prevMillisec = millis();
+ 616:	61 d2       	rcall	.+1218   	; 0xada <millis>
+	}
+	print_Data_Num(num_Index, diff_num);
+ 618:	60 91 ea 03 	lds	r22, 0x03EA	; 0x8003ea <diff_num>
+ 61c:	80 91 e7 03 	lds	r24, 0x03E7	; 0x8003e7 <num_Index>
+	
+	if (restart_button_State() == 1){
+ 620:	4d df       	rcall	.-358    	; 0x4bc <print_Data_Num>
+ 622:	8d dd       	rcall	.-1254   	; 0x13e <restart_button_State>
+ 624:	81 30       	cpi	r24, 0x01	; 1
+		reset_Game();
+ 626:	09 f4       	brne	.+2      	; 0x62a <display_Set_Diff+0x4e>
+ 628:	a6 df       	rcall	.-180    	; 0x576 <reset_Game>
+	}
+	// 난이도 조절부
+	if(diff_button_State() == 1){
+ 62a:	66 dd       	rcall	.-1332   	; 0xf8 <diff_button_State>
+ 62c:	81 30       	cpi	r24, 0x01	; 1
+ 62e:	51 f4       	brne	.+20     	; 0x644 <display_Set_Diff+0x68>
+ 630:	80 91 ea 03 	lds	r24, 0x03EA	; 0x8003ea <diff_num>
+		diff_num++;
+ 634:	8f 5f       	subi	r24, 0xFF	; 255
+ 636:	83 30       	cpi	r24, 0x03	; 3
+		if(diff_num > ((sizeof(diff) / sizeof(diff[0]))-1)) diff_num = 0;
+ 638:	18 f4       	brcc	.+6      	; 0x640 <display_Set_Diff+0x64>
+ 63a:	80 93 ea 03 	sts	0x03EA, r24	; 0x8003ea <diff_num>
+	if (restart_button_State() == 1){
+		reset_Game();
+	}
+	// 난이도 조절부
+	if(diff_button_State() == 1){
+		diff_num++;
+ 63e:	02 c0       	rjmp	.+4      	; 0x644 <display_Set_Diff+0x68>
+ 640:	10 92 ea 03 	sts	0x03EA, r1	; 0x8003ea <diff_num>
+		if(diff_num > ((sizeof(diff) / sizeof(diff[0]))-1)) diff_num = 0;
+ 644:	df 91       	pop	r29
+	}
+}
+ 646:	cf 91       	pop	r28
+ 648:	08 95       	ret
+
+0000064a <tracking_Head>:
+ 64a:	e1 e7       	ldi	r30, 0x71	; 113
+
+void tracking_Head(){
+ 64c:	f4 e0       	ldi	r31, 0x04	; 4
+ 64e:	23 ef       	ldi	r18, 0xF3	; 243
+ 650:	33 e0       	ldi	r19, 0x03	; 3
+	for(int i = SIZE-1; i > 0; i--){
+		head_Coord[i][0] = head_Coord[i-1][0];
+ 652:	80 81       	ld	r24, Z
+ 654:	82 83       	std	Z+2, r24	; 0x02
+		head_Coord[i][1] = head_Coord[i-1][1];
+ 656:	81 81       	ldd	r24, Z+1	; 0x01
+ 658:	83 83       	std	Z+3, r24	; 0x03
+ 65a:	32 97       	sbiw	r30, 0x02	; 2
+		if(diff_num > ((sizeof(diff) / sizeof(diff[0]))-1)) diff_num = 0;
+	}
+}
+
+void tracking_Head(){
+	for(int i = SIZE-1; i > 0; i--){
+ 65c:	e2 17       	cp	r30, r18
+ 65e:	f3 07       	cpc	r31, r19
+ 660:	c1 f7       	brne	.-16     	; 0x652 <tracking_Head+0x8>
+		head_Coord[i][0] = head_Coord[i-1][0];
+		head_Coord[i][1] = head_Coord[i-1][1];
+	}
+	head_Coord[0][0] = col;
+ 662:	e5 ef       	ldi	r30, 0xF5	; 245
+ 664:	f3 e0       	ldi	r31, 0x03	; 3
+ 666:	80 91 ec 03 	lds	r24, 0x03EC	; 0x8003ec <col>
+ 66a:	80 83       	st	Z, r24
+	head_Coord[0][1] = row;
+ 66c:	80 91 d2 03 	lds	r24, 0x03D2	; 0x8003d2 <row>
+ 670:	81 83       	std	Z+1, r24	; 0x01
+ 672:	08 95       	ret
+
+00000674 <make_Food>:
+}
+
+void make_Food(){
+	// 현재 col, row와 같은 값이면 안됨, 뒷 꼬리들과 같은 값이면 안됨
+	// 머리가 먹이에 닿으면
+	if(f_col == col && f_row == row){
+ 674:	20 91 75 04 	lds	r18, 0x0475	; 0x800475 <f_col>
+ 678:	30 e0       	ldi	r19, 0x00	; 0
+ 67a:	80 91 ec 03 	lds	r24, 0x03EC	; 0x8003ec <col>
+ 67e:	08 2e       	mov	r0, r24
+ 680:	00 0c       	add	r0, r0
+ 682:	99 0b       	sbc	r25, r25
+ 684:	28 17       	cp	r18, r24
+ 686:	39 07       	cpc	r19, r25
+ 688:	69 f5       	brne	.+90     	; 0x6e4 <make_Food+0x70>
+ 68a:	20 91 f4 03 	lds	r18, 0x03F4	; 0x8003f4 <f_row>
+ 68e:	30 e0       	ldi	r19, 0x00	; 0
+ 690:	80 91 d2 03 	lds	r24, 0x03D2	; 0x8003d2 <row>
+ 694:	08 2e       	mov	r0, r24
+ 696:	00 0c       	add	r0, r0
+ 698:	99 0b       	sbc	r25, r25
+ 69a:	28 17       	cp	r18, r24
+ 69c:	39 07       	cpc	r19, r25
+ 69e:	11 f5       	brne	.+68     	; 0x6e4 <make_Food+0x70>
+		// 먹었다고 카운트하고
+		eat_count++;
+ 6a0:	80 91 eb 03 	lds	r24, 0x03EB	; 0x8003eb <eat_count>
+ 6a4:	8f 5f       	subi	r24, 0xFF	; 255
+ 6a6:	80 93 eb 03 	sts	0x03EB, r24	; 0x8003eb <eat_count>
+				
+		for(;;){
+			uint8_t check = 0;
+			
+			// 먹이의 새로운 좌표를 생성
+			f_col = getRandNum();
+ 6aa:	8e df       	rcall	.-228    	; 0x5c8 <getRandNum>
+ 6ac:	80 93 75 04 	sts	0x0475, r24	; 0x800475 <f_col>
+			f_row = getRandNum();
+ 6b0:	8b df       	rcall	.-234    	; 0x5c8 <getRandNum>
+ 6b2:	80 93 f4 03 	sts	0x03F4, r24	; 0x8003f4 <f_row>
+ 6b6:	20 91 eb 03 	lds	r18, 0x03EB	; 0x8003eb <eat_count>
+			
+			for(int i = 0; i < eat_count; i++){
+ 6ba:	22 23       	and	r18, r18
+ 6bc:	99 f0       	breq	.+38     	; 0x6e4 <make_Food+0x70>
+ 6be:	40 91 75 04 	lds	r20, 0x0475	; 0x800475 <f_col>
+				if((head_Coord[i][0] == f_col) && (head_Coord[i][1] == f_row)){
+ 6c2:	e5 ef       	ldi	r30, 0xF5	; 245
+ 6c4:	f3 e0       	ldi	r31, 0x03	; 3
+ 6c6:	30 e0       	ldi	r19, 0x00	; 0
+ 6c8:	22 0f       	add	r18, r18
+ 6ca:	33 1f       	adc	r19, r19
+ 6cc:	2b 50       	subi	r18, 0x0B	; 11
+ 6ce:	3c 4f       	sbci	r19, 0xFC	; 252
+ 6d0:	90 81       	ld	r25, Z
+ 6d2:	94 13       	cpse	r25, r20
+ 6d4:	03 c0       	rjmp	.+6      	; 0x6dc <make_Food+0x68>
+ 6d6:	91 81       	ldd	r25, Z+1	; 0x01
+ 6d8:	89 17       	cp	r24, r25
+ 6da:	39 f3       	breq	.-50     	; 0x6aa <make_Food+0x36>
+ 6dc:	32 96       	adiw	r30, 0x02	; 2
+ 6de:	e2 17       	cp	r30, r18
+			
+			// 먹이의 새로운 좌표를 생성
+			f_col = getRandNum();
+			f_row = getRandNum();
+			
+			for(int i = 0; i < eat_count; i++){
+ 6e0:	f3 07       	cpc	r31, r19
+ 6e2:	b1 f7       	brne	.-20     	; 0x6d0 <make_Food+0x5c>
+ 6e4:	08 95       	ret
+
+000006e6 <main>:
+ 6e6:	d9 d1       	rcall	.+946    	; 0xa9a <timer0_Init>
+uint8_t pcount = 0;
+
+int main(void)
+{
+	timer0_Init();
+	ADC_init_single();
+ 6e8:	ef dc       	rcall	.-1570   	; 0xc8 <ADC_init_single>
+	button_Init();
+ 6ea:	00 dd       	rcall	.-1536   	; 0xec <button_Init>
+	dotMatrix_Init();
+ 6ec:	62 dd       	rcall	.-1340   	; 0x1b2 <dotMatrix_Init>
+ 6ee:	1a d2       	rcall	.+1076   	; 0xb24 <UART0_Init>
+	UART0_Init();
+ 6f0:	83 ed       	ldi	r24, 0xD3	; 211
+ 6f2:	93 e0       	ldi	r25, 0x03	; 3
+	
+	stdout = &OUTPUT;
+ 6f4:	90 93 7a 04 	sts	0x047A, r25	; 0x80047a <__iob+0x3>
+ 6f8:	80 93 79 04 	sts	0x0479, r24	; 0x800479 <__iob+0x2>
+ 6fc:	78 94       	sei
+	sei();
+	
+	uint16_t read_x, read_y;
+	uint32_t prevMillisec = millis();	// 시간
+ 6fe:	ed d1       	rcall	.+986    	; 0xada <millis>
+ 700:	4b 01       	movw	r8, r22
+ 702:	5c 01       	movw	r10, r24
+	
+	srand(prevMillisec);
+ 704:	cb 01       	movw	r24, r22
+ 706:	ae d2       	rcall	.+1372   	; 0xc64 <srand>
+ 708:	5f df       	rcall	.-322    	; 0x5c8 <getRandNum>
+	
+	// 먹이 첫 위치 설정
+	while(1){
+		f_col = getRandNum();
+ 70a:	80 93 75 04 	sts	0x0475, r24	; 0x800475 <f_col>
+ 70e:	8f e9       	ldi	r24, 0x9F	; 159
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 710:	9f e0       	ldi	r25, 0x0F	; 15
+ 712:	01 97       	sbiw	r24, 0x01	; 1
+ 714:	f1 f7       	brne	.-4      	; 0x712 <main+0x2c>
+ 716:	00 c0       	rjmp	.+0      	; 0x718 <main+0x32>
+ 718:	00 00       	nop
+ 71a:	56 df       	rcall	.-340    	; 0x5c8 <getRandNum>
+		_delay_ms(1);
+		f_row = getRandNum();
+ 71c:	80 93 f4 03 	sts	0x03F4, r24	; 0x8003f4 <f_row>
+ 720:	40 91 75 04 	lds	r20, 0x0475	; 0x800475 <f_col>
+		if((f_col != col) && (f_row != row)) break;
+ 724:	50 e0       	ldi	r21, 0x00	; 0
+ 726:	20 91 ec 03 	lds	r18, 0x03EC	; 0x8003ec <col>
+ 72a:	02 2e       	mov	r0, r18
+ 72c:	00 0c       	add	r0, r0
+ 72e:	33 0b       	sbc	r19, r19
+ 730:	42 17       	cp	r20, r18
+ 732:	53 07       	cpc	r21, r19
+ 734:	49 f3       	breq	.-46     	; 0x708 <main+0x22>
+ 736:	90 e0       	ldi	r25, 0x00	; 0
+ 738:	20 91 d2 03 	lds	r18, 0x03D2	; 0x8003d2 <row>
+ 73c:	02 2e       	mov	r0, r18
+ 73e:	00 0c       	add	r0, r0
+ 740:	33 0b       	sbc	r19, r19
+ 742:	82 17       	cp	r24, r18
+ 744:	93 07       	cpc	r25, r19
+ 746:	01 f3       	breq	.-64     	; 0x708 <main+0x22>
+ 748:	e5 ef       	ldi	r30, 0xF5	; 245
+ 74a:	f3 e0       	ldi	r31, 0x03	; 3
+ 74c:	85 e7       	ldi	r24, 0x75	; 117
+ 74e:	94 e0       	ldi	r25, 0x04	; 4
+ 750:	10 82       	st	Z, r1
+ 752:	11 82       	std	Z+1, r1	; 0x01
+	}
+	
+	// 머리 좌표 배열 초기화
+	for(int i = 0; i < SIZE; i++){
+		for(int j = 0; j < 2; j++){
+			head_Coord[i][j] = 0;
+ 754:	32 96       	adiw	r30, 0x02	; 2
+ 756:	8e 17       	cp	r24, r30
+ 758:	9f 07       	cpc	r25, r31
+		f_row = getRandNum();
+		if((f_col != col) && (f_row != row)) break;
+	}
+	
+	// 머리 좌표 배열 초기화
+	for(int i = 0; i < SIZE; i++){
+ 75a:	d1 f7       	brne	.-12     	; 0x750 <main+0x6a>
+ 75c:	82 e0       	ldi	r24, 0x02	; 2
+		for(int j = 0; j < 2; j++){
+			head_Coord[i][j] = 0;
+		}
+	}
+	
+	DIRECTION = RIGHTSIDE; // 처음은 아래로 움직이기 시작
+ 75e:	80 93 f2 03 	sts	0x03F2, r24	; 0x8003f2 <DIRECTION>
+ 762:	10 92 76 04 	sts	0x0476, r1	; 0x800476 <LIFE>
+	LIFE = ALIVE;
+ 766:	81 e0       	ldi	r24, 0x01	; 1
+	STATE = STOP;
+ 768:	80 93 f3 03 	sts	0x03F3, r24	; 0x8003f3 <STATE>
+ 76c:	b6 d1       	rcall	.+876    	; 0xada <millis>
+	for(;;){
+		if((millis() - prevMillisec) > 50){
+ 76e:	dc 01       	movw	r26, r24
+ 770:	cb 01       	movw	r24, r22
+ 772:	88 19       	sub	r24, r8
+ 774:	99 09       	sbc	r25, r9
+ 776:	aa 09       	sbc	r26, r10
+ 778:	bb 09       	sbc	r27, r11
+ 77a:	c3 97       	sbiw	r24, 0x33	; 51
+ 77c:	a1 05       	cpc	r26, r1
+ 77e:	b1 05       	cpc	r27, r1
+ 780:	68 f0       	brcs	.+26     	; 0x79c <main+0xb6>
+ 782:	80 91 e5 03 	lds	r24, 0x03E5	; 0x8003e5 <welcome_Index>
+			welcome_Index = ((welcome_Index + 1)  % ( txt_welcomesize ));
+ 786:	90 e0       	ldi	r25, 0x00	; 0
+ 788:	01 96       	adiw	r24, 0x01	; 1
+ 78a:	60 91 0a 01 	lds	r22, 0x010A	; 0x80010a <txt_welcomesize>
+ 78e:	70 e0       	ldi	r23, 0x00	; 0
+ 790:	d6 d1       	rcall	.+940    	; 0xb3e <__divmodhi4>
+ 792:	80 93 e5 03 	sts	0x03E5, r24	; 0x8003e5 <welcome_Index>
+			prevMillisec = millis();
+ 796:	a1 d1       	rcall	.+834    	; 0xada <millis>
+ 798:	4b 01       	movw	r8, r22
+ 79a:	5c 01       	movw	r10, r24
+ 79c:	80 91 e5 03 	lds	r24, 0x03E5	; 0x8003e5 <welcome_Index>
+		}
+		slide_Data_Welcome(welcome_Index);
+ 7a0:	90 e0       	ldi	r25, 0x00	; 0
+ 7a2:	0b dd       	rcall	.-1514   	; 0x1ba <slide_Data_Welcome>
+ 7a4:	20 91 e5 03 	lds	r18, 0x03E5	; 0x8003e5 <welcome_Index>
+		if(welcome_Index == txt_welcomesize-1){
+ 7a8:	30 e0       	ldi	r19, 0x00	; 0
+ 7aa:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <txt_welcomesize>
+ 7ae:	90 e0       	ldi	r25, 0x00	; 0
+ 7b0:	01 97       	sbiw	r24, 0x01	; 1
+ 7b2:	28 17       	cp	r18, r24
+ 7b4:	39 07       	cpc	r19, r25
+ 7b6:	d1 f6       	brne	.-76     	; 0x76c <main+0x86>
+ 7b8:	81 e0       	ldi	r24, 0x01	; 1
+ 7ba:	80 93 f3 03 	sts	0x03F3, r24	; 0x8003f3 <STATE>
+			STATE = STOP;
+ 7be:	c1 e0       	ldi	r28, 0x01	; 1
+ 7c0:	0f 2e       	mov	r0, r31
+				break;
+			}
+			
+			// play중 스탑버튼 누르면 처음으로
+			if (restart_button_State() == 1){
+				STATE = STOP;
+ 7c2:	f3 e0       	ldi	r31, 0x03	; 3
+				if(LIFE == DEAD) break;
+				
+				// 먹이 생성부
+				make_Food();
+				if(eat_count == 63){
+					STATE = SUCCESS;
+ 7c4:	ff 2e       	mov	r15, r31
+ 7c6:	f0 2d       	mov	r31, r0
+ 7c8:	d2 e0       	ldi	r29, 0x02	; 2
+ 7ca:	80 91 f3 03 	lds	r24, 0x03F3	; 0x8003f3 <STATE>
+		}
+	}
+	
+	while (1)
+	{
+		switch(STATE){
+ 7ce:	81 30       	cpi	r24, 0x01	; 1
+ 7d0:	39 f0       	breq	.+14     	; 0x7e0 <main+0xfa>
+ 7d2:	08 f4       	brcc	.+2      	; 0x7d6 <main+0xf0>
+ 7d4:	5b c0       	rjmp	.+182    	; 0x88c <main+0x1a6>
+ 7d6:	82 30       	cpi	r24, 0x02	; 2
+ 7d8:	31 f0       	breq	.+12     	; 0x7e6 <main+0x100>
+ 7da:	83 30       	cpi	r24, 0x03	; 3
+ 7dc:	69 f1       	breq	.+90     	; 0x838 <main+0x152>
+ 7de:	f7 cf       	rjmp	.-18     	; 0x7ce <main+0xe8>
+			// 처음 시작 화면 //////////////////////////////////////
+			case STOP:
+			// 초기 난이도 선택 화면 및 시작 대기
+			display_Set_Diff(prevMillisec);
+ 7e0:	c4 01       	movw	r24, r8
+ 7e2:	fc de       	rcall	.-520    	; 0x5dc <display_Set_Diff>
+ 7e4:	f2 cf       	rjmp	.-28     	; 0x7ca <main+0xe4>
+			break;
+ 7e6:	79 d1       	rcall	.+754    	; 0xada <millis>
+			
+			// 게임 시작 전 화면 출력 //////////////////////////////
+			case START:
+			// 시작 화면 출력 후 플레이 시작
+			if((millis() - prevMillisec) > 50){
+ 7e8:	dc 01       	movw	r26, r24
+ 7ea:	cb 01       	movw	r24, r22
+ 7ec:	88 19       	sub	r24, r8
+ 7ee:	99 09       	sbc	r25, r9
+ 7f0:	aa 09       	sbc	r26, r10
+ 7f2:	bb 09       	sbc	r27, r11
+ 7f4:	c3 97       	sbiw	r24, 0x33	; 51
+ 7f6:	a1 05       	cpc	r26, r1
+ 7f8:	b1 05       	cpc	r27, r1
+ 7fa:	68 f0       	brcs	.+26     	; 0x816 <main+0x130>
+				play_Index = ((play_Index + 1)  % ( txt_playsize ));
+ 7fc:	80 91 e8 03 	lds	r24, 0x03E8	; 0x8003e8 <play_Index>
+ 800:	90 e0       	ldi	r25, 0x00	; 0
+ 802:	01 96       	adiw	r24, 0x01	; 1
+ 804:	60 91 08 01 	lds	r22, 0x0108	; 0x800108 <txt_playsize>
+ 808:	70 e0       	ldi	r23, 0x00	; 0
+ 80a:	99 d1       	rcall	.+818    	; 0xb3e <__divmodhi4>
+ 80c:	80 93 e8 03 	sts	0x03E8, r24	; 0x8003e8 <play_Index>
+				prevMillisec = millis();
+ 810:	64 d1       	rcall	.+712    	; 0xada <millis>
+ 812:	4b 01       	movw	r8, r22
+ 814:	5c 01       	movw	r10, r24
+ 816:	80 91 e8 03 	lds	r24, 0x03E8	; 0x8003e8 <play_Index>
+			}
+			slide_Data_Play(play_Index);
+ 81a:	90 e0       	ldi	r25, 0x00	; 0
+ 81c:	34 dd       	rcall	.-1432   	; 0x286 <slide_Data_Play>
+ 81e:	20 91 e8 03 	lds	r18, 0x03E8	; 0x8003e8 <play_Index>
+			if(play_Index == txt_playsize-1){
+ 822:	30 e0       	ldi	r19, 0x00	; 0
+ 824:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <txt_playsize>
+ 828:	90 e0       	ldi	r25, 0x00	; 0
+ 82a:	01 97       	sbiw	r24, 0x01	; 1
+ 82c:	28 17       	cp	r18, r24
+ 82e:	39 07       	cpc	r19, r25
+ 830:	61 f6       	brne	.-104    	; 0x7ca <main+0xe4>
+ 832:	10 92 f3 03 	sts	0x03F3, r1	; 0x8003f3 <STATE>
+				STATE = PLAY;
+ 836:	c9 cf       	rjmp	.-110    	; 0x7ca <main+0xe4>
+ 838:	50 d1       	rcall	.+672    	; 0xada <millis>
+			}
+			break;
+			
+			// 게임 클리어 /////////////////////////////////////////
+			case SUCCESS:
+			if((millis() - prevMillisec) > 50){
+ 83a:	dc 01       	movw	r26, r24
+ 83c:	cb 01       	movw	r24, r22
+ 83e:	88 19       	sub	r24, r8
+ 840:	99 09       	sbc	r25, r9
+ 842:	aa 09       	sbc	r26, r10
+ 844:	bb 09       	sbc	r27, r11
+ 846:	c3 97       	sbiw	r24, 0x33	; 51
+ 848:	a1 05       	cpc	r26, r1
+ 84a:	b1 05       	cpc	r27, r1
+				success_Index = ((success_Index + 1)  % ( txt_successsize ));
+ 84c:	68 f0       	brcs	.+26     	; 0x868 <main+0x182>
+ 84e:	80 91 e6 03 	lds	r24, 0x03E6	; 0x8003e6 <success_Index>
+ 852:	90 e0       	ldi	r25, 0x00	; 0
+ 854:	01 96       	adiw	r24, 0x01	; 1
+ 856:	60 91 06 01 	lds	r22, 0x0106	; 0x800106 <txt_successsize>
+ 85a:	70 e0       	ldi	r23, 0x00	; 0
+ 85c:	70 d1       	rcall	.+736    	; 0xb3e <__divmodhi4>
+ 85e:	80 93 e6 03 	sts	0x03E6, r24	; 0x8003e6 <success_Index>
+				prevMillisec = millis();
+ 862:	3b d1       	rcall	.+630    	; 0xada <millis>
+ 864:	4b 01       	movw	r8, r22
+ 866:	5c 01       	movw	r10, r24
+ 868:	80 91 e6 03 	lds	r24, 0x03E6	; 0x8003e6 <success_Index>
+			}
+			slide_Data_Success(success_Index);
+ 86c:	90 e0       	ldi	r25, 0x00	; 0
+ 86e:	3e dd       	rcall	.-1412   	; 0x2ec <slide_Data_Success>
+ 870:	20 91 e6 03 	lds	r18, 0x03E6	; 0x8003e6 <success_Index>
+			if(success_Index == txt_successsize-1){
+ 874:	30 e0       	ldi	r19, 0x00	; 0
+ 876:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <txt_successsize>
+ 87a:	90 e0       	ldi	r25, 0x00	; 0
+ 87c:	01 97       	sbiw	r24, 0x01	; 1
+ 87e:	28 17       	cp	r18, r24
+ 880:	39 07       	cpc	r19, r25
+ 882:	09 f0       	breq	.+2      	; 0x886 <main+0x1a0>
+ 884:	a2 cf       	rjmp	.-188    	; 0x7ca <main+0xe4>
+				STATE = STOP;
+ 886:	c0 93 f3 03 	sts	0x03F3, r28	; 0x8003f3 <STATE>
+ 88a:	9f cf       	rjmp	.-194    	; 0x7ca <main+0xe4>
+			}
+			break;
+			
+			// 게임 플레이  ////////////////////////////////////////
+			case PLAY:
+			switch(LIFE){
+ 88c:	80 91 76 04 	lds	r24, 0x0476	; 0x800476 <LIFE>
+ 890:	88 23       	and	r24, r24
+ 892:	21 f0       	breq	.+8      	; 0x89c <main+0x1b6>
+ 894:	81 30       	cpi	r24, 0x01	; 1
+ 896:	09 f4       	brne	.+2      	; 0x89a <main+0x1b4>
+ 898:	a2 c0       	rjmp	.+324    	; 0x9de <main+0x2f8>
+ 89a:	f5 c0       	rjmp	.+490    	; 0xa86 <main+0x3a0>
+				//살아있을 때 //////////////////////////////////////
+				case ALIVE:
+				// 조이스틱 x, y 상태 읽기
+				read_x = read_ADC_single(JOY_VRX);
+ 89c:	80 e0       	ldi	r24, 0x00	; 0
+ 89e:	1c dc       	rcall	.-1992   	; 0xd8 <read_ADC_single>
+ 8a0:	08 2f       	mov	r16, r24
+ 8a2:	19 2f       	mov	r17, r25
+ 8a4:	8c 2f       	mov	r24, r28
+				read_y = read_ADC_single(JOY_VRY);
+ 8a6:	18 dc       	rcall	.-2000   	; 0xd8 <read_ADC_single>
+ 8a8:	89 31       	cpi	r24, 0x19	; 25
+ 8aa:	91 05       	cpc	r25, r1
+				if(read_y < 25){
+ 8ac:	18 f4       	brcc	.+6      	; 0x8b4 <main+0x1ce>
+ 8ae:	c0 93 f2 03 	sts	0x03F2, r28	; 0x8003f2 <DIRECTION>
+					DIRECTION = DOWNSIDE;
+ 8b2:	13 c0       	rjmp	.+38     	; 0x8da <main+0x1f4>
+ 8b4:	80 3d       	cpi	r24, 0xD0	; 208
+				}
+				// 조이스틱 하
+				else if(read_y > 975){
+ 8b6:	93 40       	sbci	r25, 0x03	; 3
+ 8b8:	18 f0       	brcs	.+6      	; 0x8c0 <main+0x1da>
+ 8ba:	10 92 f2 03 	sts	0x03F2, r1	; 0x8003f2 <DIRECTION>
+					DIRECTION = UPSIDE;
+ 8be:	0d c0       	rjmp	.+26     	; 0x8da <main+0x1f4>
+ 8c0:	80 2f       	mov	r24, r16
+			case PLAY:
+			switch(LIFE){
+				//살아있을 때 //////////////////////////////////////
+				case ALIVE:
+				// 조이스틱 x, y 상태 읽기
+				read_x = read_ADC_single(JOY_VRX);
+ 8c2:	91 2f       	mov	r25, r17
+ 8c4:	89 31       	cpi	r24, 0x19	; 25
+				// 조이스틱 하
+				else if(read_y > 975){
+					DIRECTION = UPSIDE;
+				}
+				// 조이스틱 좌
+				else if(read_x < 25){
+ 8c6:	91 05       	cpc	r25, r1
+ 8c8:	18 f4       	brcc	.+6      	; 0x8d0 <main+0x1ea>
+ 8ca:	d0 93 f2 03 	sts	0x03F2, r29	; 0x8003f2 <DIRECTION>
+					DIRECTION = RIGHTSIDE;
+ 8ce:	05 c0       	rjmp	.+10     	; 0x8da <main+0x1f4>
+ 8d0:	80 3d       	cpi	r24, 0xD0	; 208
+				}
+				// 조이스틱 우
+				else if(read_x > 975){
+ 8d2:	93 40       	sbci	r25, 0x03	; 3
+ 8d4:	10 f0       	brcs	.+4      	; 0x8da <main+0x1f4>
+ 8d6:	f0 92 f2 03 	sts	0x03F2, r15	; 0x8003f2 <DIRECTION>
+					DIRECTION = LEFTSIDE;
+ 8da:	ff d0       	rcall	.+510    	; 0xada <millis>
+				}
+				
+				
+				if((millis() - prevMillisec) > (diff[diff_num])){
+ 8dc:	ab 01       	movw	r20, r22
+ 8de:	bc 01       	movw	r22, r24
+ 8e0:	48 19       	sub	r20, r8
+ 8e2:	59 09       	sbc	r21, r9
+ 8e4:	6a 09       	sbc	r22, r10
+ 8e6:	7b 09       	sbc	r23, r11
+ 8e8:	e0 91 ea 03 	lds	r30, 0x03EA	; 0x8003ea <diff_num>
+ 8ec:	f0 e0       	ldi	r31, 0x00	; 0
+ 8ee:	ee 0f       	add	r30, r30
+ 8f0:	ff 1f       	adc	r31, r31
+ 8f2:	e4 53       	subi	r30, 0x34	; 52
+ 8f4:	fc 4f       	sbci	r31, 0xFC	; 252
+ 8f6:	80 81       	ld	r24, Z
+ 8f8:	91 81       	ldd	r25, Z+1	; 0x01
+ 8fa:	a0 e0       	ldi	r26, 0x00	; 0
+ 8fc:	b0 e0       	ldi	r27, 0x00	; 0
+ 8fe:	84 17       	cp	r24, r20
+ 900:	95 07       	cpc	r25, r21
+ 902:	a6 07       	cpc	r26, r22
+ 904:	b7 07       	cpc	r27, r23
+ 906:	28 f5       	brcc	.+74     	; 0x952 <main+0x26c>
+ 908:	80 91 f2 03 	lds	r24, 0x03F2	; 0x8003f2 <DIRECTION>
+					// 조이스틱 방향에 따라 움직이는 부분
+					switch(DIRECTION){
+ 90c:	81 30       	cpi	r24, 0x01	; 1
+ 90e:	61 f0       	breq	.+24     	; 0x928 <main+0x242>
+ 910:	28 f0       	brcs	.+10     	; 0x91c <main+0x236>
+ 912:	82 30       	cpi	r24, 0x02	; 2
+ 914:	a9 f0       	breq	.+42     	; 0x940 <main+0x25a>
+ 916:	83 30       	cpi	r24, 0x03	; 3
+ 918:	69 f0       	breq	.+26     	; 0x934 <main+0x24e>
+ 91a:	17 c0       	rjmp	.+46     	; 0x94a <main+0x264>
+ 91c:	80 91 d2 03 	lds	r24, 0x03D2	; 0x8003d2 <row>
+						case UPSIDE:
+						row--;
+ 920:	81 50       	subi	r24, 0x01	; 1
+ 922:	80 93 d2 03 	sts	0x03D2, r24	; 0x8003d2 <row>
+						break;
+ 926:	11 c0       	rjmp	.+34     	; 0x94a <main+0x264>
+						
+						case DOWNSIDE:
+						row++;
+ 928:	80 91 d2 03 	lds	r24, 0x03D2	; 0x8003d2 <row>
+ 92c:	8f 5f       	subi	r24, 0xFF	; 255
+ 92e:	80 93 d2 03 	sts	0x03D2, r24	; 0x8003d2 <row>
+						break;
+ 932:	0b c0       	rjmp	.+22     	; 0x94a <main+0x264>
+						
+						case LEFTSIDE:
+						col--;
+ 934:	80 91 ec 03 	lds	r24, 0x03EC	; 0x8003ec <col>
+ 938:	81 50       	subi	r24, 0x01	; 1
+ 93a:	80 93 ec 03 	sts	0x03EC, r24	; 0x8003ec <col>
+						break;
+ 93e:	05 c0       	rjmp	.+10     	; 0x94a <main+0x264>
+						
+						case RIGHTSIDE:
+						col++;
+ 940:	80 91 ec 03 	lds	r24, 0x03EC	; 0x8003ec <col>
+ 944:	8f 5f       	subi	r24, 0xFF	; 255
+ 946:	80 93 ec 03 	sts	0x03EC, r24	; 0x8003ec <col>
+						break;
+					}
+					prevMillisec = millis();
+ 94a:	c7 d0       	rcall	.+398    	; 0xada <millis>
+ 94c:	4b 01       	movw	r8, r22
+ 94e:	5c 01       	movw	r10, r24
+ 950:	7c de       	rcall	.-776    	; 0x64a <tracking_Head>
+					
+					tracking_Head();
+ 952:	60 91 d2 03 	lds	r22, 0x03D2	; 0x8003d2 <row>
+				}
+				
+				// 충돌 확인부
+				// 8*8 범위를 벗어나면 DEAD
+				if(row >= 8 || col >= 8 || row < 0 || col < 0){
+ 956:	68 30       	cpi	r22, 0x08	; 8
+ 958:	b4 f4       	brge	.+44     	; 0x986 <main+0x2a0>
+ 95a:	40 91 ec 03 	lds	r20, 0x03EC	; 0x8003ec <col>
+ 95e:	48 30       	cpi	r20, 0x08	; 8
+ 960:	90 f4       	brcc	.+36     	; 0x986 <main+0x2a0>
+ 962:	66 23       	and	r22, r22
+ 964:	84 f0       	brlt	.+32     	; 0x986 <main+0x2a0>
+ 966:	e7 ef       	ldi	r30, 0xF7	; 247
+ 968:	f3 e0       	ldi	r31, 0x03	; 3
+ 96a:	20 91 eb 03 	lds	r18, 0x03EB	; 0x8003eb <eat_count>
+ 96e:	30 e0       	ldi	r19, 0x00	; 0
+ 970:	22 0f       	add	r18, r18
+ 972:	33 1f       	adc	r19, r19
+ 974:	29 50       	subi	r18, 0x09	; 9
+ 976:	3c 4f       	sbci	r19, 0xFC	; 252
+ 978:	04 2e       	mov	r0, r20
+ 97a:	00 0c       	add	r0, r0
+				
+				// 몸체에 머리가 충돌하면 DEAD
+				for(;;){
+					uint8_t check = 0;
+					for(int i = 0; i < eat_count; i++){
+						if((head_Coord[i+1][0] == col) && (head_Coord[i+1][1] == row)){
+ 97c:	55 0b       	sbc	r21, r21
+ 97e:	06 2e       	mov	r0, r22
+ 980:	00 0c       	add	r0, r0
+ 982:	77 0b       	sbc	r23, r23
+ 984:	0f c0       	rjmp	.+30     	; 0x9a4 <main+0x2be>
+ 986:	c0 93 76 04 	sts	0x0476, r28	; 0x800476 <LIFE>
+				}
+				
+				// 충돌 확인부
+				// 8*8 범위를 벗어나면 DEAD
+				if(row >= 8 || col >= 8 || row < 0 || col < 0){
+					LIFE = DEAD;
+ 98a:	7d c0       	rjmp	.+250    	; 0xa86 <main+0x3a0>
+					break;
+ 98c:	80 81       	ld	r24, Z
+				
+				// 몸체에 머리가 충돌하면 DEAD
+				for(;;){
+					uint8_t check = 0;
+					for(int i = 0; i < eat_count; i++){
+						if((head_Coord[i+1][0] == col) && (head_Coord[i+1][1] == row)){
+ 98e:	90 e0       	ldi	r25, 0x00	; 0
+ 990:	84 17       	cp	r24, r20
+ 992:	95 07       	cpc	r25, r21
+ 994:	31 f4       	brne	.+12     	; 0x9a2 <main+0x2bc>
+ 996:	81 81       	ldd	r24, Z+1	; 0x01
+ 998:	90 e0       	ldi	r25, 0x00	; 0
+ 99a:	86 17       	cp	r24, r22
+ 99c:	97 07       	cpc	r25, r23
+ 99e:	09 f4       	brne	.+2      	; 0x9a2 <main+0x2bc>
+ 9a0:	79 c0       	rjmp	.+242    	; 0xa94 <main+0x3ae>
+ 9a2:	32 96       	adiw	r30, 0x02	; 2
+ 9a4:	2e 17       	cp	r18, r30
+				}
+				
+				// 몸체에 머리가 충돌하면 DEAD
+				for(;;){
+					uint8_t check = 0;
+					for(int i = 0; i < eat_count; i++){
+ 9a6:	3f 07       	cpc	r19, r31
+ 9a8:	89 f7       	brne	.-30     	; 0x98c <main+0x2a6>
+						break;
+					}else{
+						break;
+					}
+				}
+				if(LIFE == DEAD) break;
+ 9aa:	80 91 76 04 	lds	r24, 0x0476	; 0x800476 <LIFE>
+ 9ae:	81 30       	cpi	r24, 0x01	; 1
+ 9b0:	09 f4       	brne	.+2      	; 0x9b4 <main+0x2ce>
+ 9b2:	69 c0       	rjmp	.+210    	; 0xa86 <main+0x3a0>
+				
+				// 먹이 생성부
+				make_Food();
+ 9b4:	5f de       	rcall	.-834    	; 0x674 <make_Food>
+				if(eat_count == 63){
+ 9b6:	80 91 eb 03 	lds	r24, 0x03EB	; 0x8003eb <eat_count>
+ 9ba:	8f 33       	cpi	r24, 0x3F	; 63
+ 9bc:	19 f4       	brne	.+6      	; 0x9c4 <main+0x2de>
+					STATE = SUCCESS;
+ 9be:	f0 92 f3 03 	sts	0x03F3, r15	; 0x8003f3 <STATE>
+					break;
+ 9c2:	61 c0       	rjmp	.+194    	; 0xa86 <main+0x3a0>
+				}
+				// 도트 출력부
+				display_Dot(col, row, f_col, f_row, head_Coord, eat_count);
+ 9c4:	e8 2e       	mov	r14, r24
+ 9c6:	05 ef       	ldi	r16, 0xF5	; 245
+ 9c8:	13 e0       	ldi	r17, 0x03	; 3
+ 9ca:	20 91 f4 03 	lds	r18, 0x03F4	; 0x8003f4 <f_row>
+ 9ce:	40 91 75 04 	lds	r20, 0x0475	; 0x800475 <f_col>
+ 9d2:	60 91 d2 03 	lds	r22, 0x03D2	; 0x8003d2 <row>
+ 9d6:	80 91 ec 03 	lds	r24, 0x03EC	; 0x8003ec <col>
+ 9da:	f0 dc       	rcall	.-1568   	; 0x3bc <display_Dot>
+				break;
+				
+				
+				// 죽었을 때 ////////////////////////////////////
+				case DEAD:
+				switch(pcount){
+ 9dc:	54 c0       	rjmp	.+168    	; 0xa86 <main+0x3a0>
+ 9de:	80 91 e2 03 	lds	r24, 0x03E2	; 0x8003e2 <__data_end>
+ 9e2:	88 23       	and	r24, r24
+ 9e4:	19 f0       	breq	.+6      	; 0x9ec <main+0x306>
+ 9e6:	81 30       	cpi	r24, 0x01	; 1
+					case 0:
+					if((millis() - prevMillisec) > 35){
+ 9e8:	51 f1       	breq	.+84     	; 0xa3e <main+0x358>
+ 9ea:	4d c0       	rjmp	.+154    	; 0xa86 <main+0x3a0>
+ 9ec:	76 d0       	rcall	.+236    	; 0xada <millis>
+ 9ee:	dc 01       	movw	r26, r24
+ 9f0:	cb 01       	movw	r24, r22
+ 9f2:	88 19       	sub	r24, r8
+ 9f4:	99 09       	sbc	r25, r9
+ 9f6:	aa 09       	sbc	r26, r10
+ 9f8:	bb 09       	sbc	r27, r11
+ 9fa:	84 97       	sbiw	r24, 0x24	; 36
+ 9fc:	a1 05       	cpc	r26, r1
+ 9fe:	b1 05       	cpc	r27, r1
+						dead_Index = ((dead_Index + 1)  % ( txt_deadsize ));
+ a00:	68 f0       	brcs	.+26     	; 0xa1c <main+0x336>
+ a02:	80 91 e9 03 	lds	r24, 0x03E9	; 0x8003e9 <dead_Index>
+ a06:	90 e0       	ldi	r25, 0x00	; 0
+ a08:	01 96       	adiw	r24, 0x01	; 1
+ a0a:	60 91 09 01 	lds	r22, 0x0109	; 0x800109 <txt_deadsize>
+ a0e:	70 e0       	ldi	r23, 0x00	; 0
+ a10:	96 d0       	rcall	.+300    	; 0xb3e <__divmodhi4>
+ a12:	80 93 e9 03 	sts	0x03E9, r24	; 0x8003e9 <dead_Index>
+						prevMillisec = millis();
+ a16:	61 d0       	rcall	.+194    	; 0xada <millis>
+ a18:	4b 01       	movw	r8, r22
+ a1a:	5c 01       	movw	r10, r24
+					}
+					slide_Data_Dead(dead_Index);
+ a1c:	80 91 e9 03 	lds	r24, 0x03E9	; 0x8003e9 <dead_Index>
+ a20:	90 e0       	ldi	r25, 0x00	; 0
+ a22:	fe db       	rcall	.-2052   	; 0x220 <slide_Data_Dead>
+					
+					// 1회 DEAD 문자 표시 후 점수 표시
+					if(dead_Index == (txt_deadsize-1)){
+ a24:	20 91 e9 03 	lds	r18, 0x03E9	; 0x8003e9 <dead_Index>
+ a28:	30 e0       	ldi	r19, 0x00	; 0
+ a2a:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <txt_deadsize>
+ a2e:	90 e0       	ldi	r25, 0x00	; 0
+ a30:	01 97       	sbiw	r24, 0x01	; 1
+ a32:	28 17       	cp	r18, r24
+ a34:	39 07       	cpc	r19, r25
+						pcount = 1;
+ a36:	39 f5       	brne	.+78     	; 0xa86 <main+0x3a0>
+ a38:	c0 93 e2 03 	sts	0x03E2, r28	; 0x8003e2 <__data_end>
+					}
+					break;
+					
+					
+					case 1:
+					if((millis() - prevMillisec) > 35){
+ a3c:	24 c0       	rjmp	.+72     	; 0xa86 <main+0x3a0>
+ a3e:	4d d0       	rcall	.+154    	; 0xada <millis>
+ a40:	dc 01       	movw	r26, r24
+ a42:	cb 01       	movw	r24, r22
+ a44:	88 19       	sub	r24, r8
+ a46:	99 09       	sbc	r25, r9
+ a48:	aa 09       	sbc	r26, r10
+ a4a:	bb 09       	sbc	r27, r11
+ a4c:	84 97       	sbiw	r24, 0x24	; 36
+ a4e:	a1 05       	cpc	r26, r1
+ a50:	b1 05       	cpc	r27, r1
+						score_Index = ((score_Index + 1)  + 8);
+ a52:	40 f0       	brcs	.+16     	; 0xa64 <main+0x37e>
+ a54:	80 91 e4 03 	lds	r24, 0x03E4	; 0x8003e4 <score_Index>
+ a58:	87 5f       	subi	r24, 0xF7	; 247
+ a5a:	80 93 e4 03 	sts	0x03E4, r24	; 0x8003e4 <score_Index>
+						prevMillisec = millis();
+ a5e:	3d d0       	rcall	.+122    	; 0xada <millis>
+ a60:	4b 01       	movw	r8, r22
+ a62:	5c 01       	movw	r10, r24
+					}
+					slide_Data_Score(score_Index, eat_count);
+ a64:	80 91 e4 03 	lds	r24, 0x03E4	; 0x8003e4 <score_Index>
+ a68:	60 91 eb 03 	lds	r22, 0x03EB	; 0x8003eb <eat_count>
+ a6c:	90 e0       	ldi	r25, 0x00	; 0
+ a6e:	71 dc       	rcall	.-1822   	; 0x352 <slide_Data_Score>
+ a70:	80 91 e3 03 	lds	r24, 0x03E3	; 0x8003e3 <reset_count>
+					reset_count++;
+ a74:	8f 5f       	subi	r24, 0xFF	; 255
+ a76:	80 93 e3 03 	sts	0x03E3, r24	; 0x8003e3 <reset_count>
+ a7a:	8f 3f       	cpi	r24, 0xFF	; 255
+					
+					// 일정 시간 점수 표시 후 초기상태로
+					if(reset_count == 255){
+ a7c:	21 f4       	brne	.+8      	; 0xa86 <main+0x3a0>
+ a7e:	c0 93 f3 03 	sts	0x03F3, r28	; 0x8003f3 <STATE>
+						STATE = STOP;
+ a82:	10 92 e2 03 	sts	0x03E2, r1	; 0x8003e2 <__data_end>
+						pcount = 0;
+ a86:	5b db       	rcall	.-2378   	; 0x13e <restart_button_State>
+				}
+				break;
+			}
+			
+			// play중 스탑버튼 누르면 처음으로
+			if (restart_button_State() == 1){
+ a88:	81 30       	cpi	r24, 0x01	; 1
+ a8a:	09 f0       	breq	.+2      	; 0xa8e <main+0x3a8>
+ a8c:	9e ce       	rjmp	.-708    	; 0x7ca <main+0xe4>
+ a8e:	c0 93 f3 03 	sts	0x03F3, r28	; 0x8003f3 <STATE>
+				STATE = STOP;
+ a92:	9b ce       	rjmp	.-714    	; 0x7ca <main+0xe4>
+ a94:	c0 93 76 04 	sts	0x0476, r28	; 0x800476 <LIFE>
+							check = 1;
+							break;
+						}
+					}
+					if(check == 1){
+						LIFE = DEAD;
+ a98:	f6 cf       	rjmp	.-20     	; 0xa86 <main+0x3a0>
+
+00000a9a <timer0_Init>:
+// static => time.c에서만 사용하게끔 하겠다. 안정성을 위해 외부에서 건드리지 못하게 하겠다.
+// 함수 내에서의 static의 역할과 혼동하면 안된다.
+
+void timer0_Init(void){
+	// CS0n 분주비 0/1/0(8), 0/1/1(32), 1/0/0(64), 1/0/1(128), 1/1/0(256), 1/1/1(1024)
+	TCCR0 |= (1<<CS02) | (0<<CS01) | (0<<CS00);
+ a9a:	83 b7       	in	r24, 0x33	; 51
+ a9c:	84 60       	ori	r24, 0x04	; 4
+ a9e:	83 bf       	out	0x33, r24	; 51
+	// CTC Mode 사용
+	TCCR0 |= (1<<WGM01) | (0<WGM00);
+ aa0:	83 b7       	in	r24, 0x33	; 51
+ aa2:	89 60       	ori	r24, 0x09	; 9
+ aa4:	83 bf       	out	0x33, r24	; 51
+	// Timer/Counter0 Compare Interrupt Enable
+	// 비교일치 인터럽트 활성화
+	TIMSK |= (1<<OCIE0);
+ aa6:	87 b7       	in	r24, 0x37	; 55
+ aa8:	82 60       	ori	r24, 0x02	; 2
+ aaa:	87 bf       	out	0x37, r24	; 55
+	// CTC Mode 이므로  TCNT가 OCR값과 같아지면 인터럽트 발생
+	OCR0 = 250 - 1;
+ aac:	89 ef       	ldi	r24, 0xF9	; 249
+ aae:	81 bf       	out	0x31, r24	; 49
+ ab0:	08 95       	ret
+
+00000ab2 <incMilliSec>:
+	// 오버플로우 인터럽트에서 TCNT0 = 256 - 250;과 같은 의미
+}
+
+// milliSec를 증가시키는 함수
+void incMilliSec(void){
+	milliSec++;
+ ab2:	80 91 ee 03 	lds	r24, 0x03EE	; 0x8003ee <milliSec>
+ ab6:	90 91 ef 03 	lds	r25, 0x03EF	; 0x8003ef <milliSec+0x1>
+ aba:	a0 91 f0 03 	lds	r26, 0x03F0	; 0x8003f0 <milliSec+0x2>
+ abe:	b0 91 f1 03 	lds	r27, 0x03F1	; 0x8003f1 <milliSec+0x3>
+ ac2:	01 96       	adiw	r24, 0x01	; 1
+ ac4:	a1 1d       	adc	r26, r1
+ ac6:	b1 1d       	adc	r27, r1
+ ac8:	80 93 ee 03 	sts	0x03EE, r24	; 0x8003ee <milliSec>
+ acc:	90 93 ef 03 	sts	0x03EF, r25	; 0x8003ef <milliSec+0x1>
+ ad0:	a0 93 f0 03 	sts	0x03F0, r26	; 0x8003f0 <milliSec+0x2>
+ ad4:	b0 93 f1 03 	sts	0x03F1, r27	; 0x8003f1 <milliSec+0x3>
+ ad8:	08 95       	ret
+
+00000ada <millis>:
+}
+
+// milliSec를 반환하는 함수
+uint32_t millis(void){
+	return milliSec;
+ ada:	60 91 ee 03 	lds	r22, 0x03EE	; 0x8003ee <milliSec>
+ ade:	70 91 ef 03 	lds	r23, 0x03EF	; 0x8003ef <milliSec+0x1>
+ ae2:	80 91 f0 03 	lds	r24, 0x03F0	; 0x8003f0 <milliSec+0x2>
+ ae6:	90 91 f1 03 	lds	r25, 0x03F1	; 0x8003f1 <milliSec+0x3>
+}
+ aea:	08 95       	ret
+
+00000aec <incTime>:
+
+// 1초 단위로 증가하는 시간 함수
+void incTime(void){
+	if(milliSec % 1000 == 0){
+ aec:	60 91 ee 03 	lds	r22, 0x03EE	; 0x8003ee <milliSec>
+ af0:	70 91 ef 03 	lds	r23, 0x03EF	; 0x8003ef <milliSec+0x1>
+ af4:	80 91 f0 03 	lds	r24, 0x03F0	; 0x8003f0 <milliSec+0x2>
+ af8:	90 91 f1 03 	lds	r25, 0x03F1	; 0x8003f1 <milliSec+0x3>
+ afc:	28 ee       	ldi	r18, 0xE8	; 232
+ afe:	33 e0       	ldi	r19, 0x03	; 3
+ b00:	40 e0       	ldi	r20, 0x00	; 0
+ b02:	50 e0       	ldi	r21, 0x00	; 0
+ b04:	2f d0       	rcall	.+94     	; 0xb64 <__udivmodsi4>
+ b06:	67 2b       	or	r22, r23
+ b08:	68 2b       	or	r22, r24
+ b0a:	69 2b       	or	r22, r25
+ b0c:	51 f4       	brne	.+20     	; 0xb22 <incTime+0x36>
+		ss++;
+ b0e:	80 91 ed 03 	lds	r24, 0x03ED	; 0x8003ed <ss>
+ b12:	8f 5f       	subi	r24, 0xFF	; 255
+		if(ss > 59) ss = 0;
+ b14:	8c 33       	cpi	r24, 0x3C	; 60
+ b16:	18 f4       	brcc	.+6      	; 0xb1e <incTime+0x32>
+}
+
+// 1초 단위로 증가하는 시간 함수
+void incTime(void){
+	if(milliSec % 1000 == 0){
+		ss++;
+ b18:	80 93 ed 03 	sts	0x03ED, r24	; 0x8003ed <ss>
+ b1c:	08 95       	ret
+		if(ss > 59) ss = 0;
+ b1e:	10 92 ed 03 	sts	0x03ED, r1	; 0x8003ed <ss>
+ b22:	08 95       	ret
+
+00000b24 <UART0_Init>:
+volatile uint8_t rxReadyFlag = 0;
+
+void UART0_Init(){
+	
+	/* Enable receiver and transmitter */
+	UCSR0B |= (1 << RXEN0) | (1 << TXEN0) | (1 << RXCIE0);
+ b24:	8a b1       	in	r24, 0x0a	; 10
+ b26:	88 69       	ori	r24, 0x98	; 152
+ b28:	8a b9       	out	0x0a, r24	; 10
+	// RXCIE0 => 수신 인터럽트 사용(USART0_RX_vect)
+	UCSR0A |= (1 << U2X1); // 2배속 모드 설정
+ b2a:	59 9a       	sbi	0x0b, 1	; 11
+	// UCSR0A |= _BV(U2X1); 2배속 모드 설정 매크로 사용
+	// UCSR0C 대부분 기본 설정 사용 비동기, 8bit 데이터, no parity, 1비트 정지
+	
+	UBRR0H = 0;
+ b2c:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
+	UBRR0L = 207;	// 9600 baud -> p.220 참고
+ b30:	8f ec       	ldi	r24, 0xCF	; 207
+ b32:	89 b9       	out	0x09, r24	; 9
+ b34:	08 95       	ret
+
+00000b36 <UART0_transmit>:
+}
+
+void UART0_transmit(char data)
+{
+	while ( !(UCSR0A & (1<<UDRE0)) );
+ b36:	5d 9b       	sbis	0x0b, 5	; 11
+ b38:	fe cf       	rjmp	.-4      	; 0xb36 <UART0_transmit>
+	UDR0 = data;
+ b3a:	8c b9       	out	0x0c, r24	; 12
+ b3c:	08 95       	ret
+
+00000b3e <__divmodhi4>:
+ b3e:	97 fb       	bst	r25, 7
+ b40:	07 2e       	mov	r0, r23
+ b42:	16 f4       	brtc	.+4      	; 0xb48 <__divmodhi4+0xa>
+ b44:	00 94       	com	r0
+ b46:	06 d0       	rcall	.+12     	; 0xb54 <__divmodhi4_neg1>
+ b48:	77 fd       	sbrc	r23, 7
+ b4a:	08 d0       	rcall	.+16     	; 0xb5c <__divmodhi4_neg2>
+ b4c:	2d d0       	rcall	.+90     	; 0xba8 <__udivmodhi4>
+ b4e:	07 fc       	sbrc	r0, 7
+ b50:	05 d0       	rcall	.+10     	; 0xb5c <__divmodhi4_neg2>
+ b52:	3e f4       	brtc	.+14     	; 0xb62 <__divmodhi4_exit>
+
+00000b54 <__divmodhi4_neg1>:
+ b54:	90 95       	com	r25
+ b56:	81 95       	neg	r24
+ b58:	9f 4f       	sbci	r25, 0xFF	; 255
+ b5a:	08 95       	ret
+
+00000b5c <__divmodhi4_neg2>:
+ b5c:	70 95       	com	r23
+ b5e:	61 95       	neg	r22
+ b60:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000b62 <__divmodhi4_exit>:
+ b62:	08 95       	ret
+
+00000b64 <__udivmodsi4>:
+ b64:	a1 e2       	ldi	r26, 0x21	; 33
+ b66:	1a 2e       	mov	r1, r26
+ b68:	aa 1b       	sub	r26, r26
+ b6a:	bb 1b       	sub	r27, r27
+ b6c:	fd 01       	movw	r30, r26
+ b6e:	0d c0       	rjmp	.+26     	; 0xb8a <__udivmodsi4_ep>
+
+00000b70 <__udivmodsi4_loop>:
+ b70:	aa 1f       	adc	r26, r26
+ b72:	bb 1f       	adc	r27, r27
+ b74:	ee 1f       	adc	r30, r30
+ b76:	ff 1f       	adc	r31, r31
+ b78:	a2 17       	cp	r26, r18
+ b7a:	b3 07       	cpc	r27, r19
+ b7c:	e4 07       	cpc	r30, r20
+ b7e:	f5 07       	cpc	r31, r21
+ b80:	20 f0       	brcs	.+8      	; 0xb8a <__udivmodsi4_ep>
+ b82:	a2 1b       	sub	r26, r18
+ b84:	b3 0b       	sbc	r27, r19
+ b86:	e4 0b       	sbc	r30, r20
+ b88:	f5 0b       	sbc	r31, r21
+
+00000b8a <__udivmodsi4_ep>:
+ b8a:	66 1f       	adc	r22, r22
+ b8c:	77 1f       	adc	r23, r23
+ b8e:	88 1f       	adc	r24, r24
+ b90:	99 1f       	adc	r25, r25
+ b92:	1a 94       	dec	r1
+ b94:	69 f7       	brne	.-38     	; 0xb70 <__udivmodsi4_loop>
+ b96:	60 95       	com	r22
+ b98:	70 95       	com	r23
+ b9a:	80 95       	com	r24
+ b9c:	90 95       	com	r25
+ b9e:	9b 01       	movw	r18, r22
+ ba0:	ac 01       	movw	r20, r24
+ ba2:	bd 01       	movw	r22, r26
+ ba4:	cf 01       	movw	r24, r30
+ ba6:	08 95       	ret
+
+00000ba8 <__udivmodhi4>:
+ ba8:	aa 1b       	sub	r26, r26
+ baa:	bb 1b       	sub	r27, r27
+ bac:	51 e1       	ldi	r21, 0x11	; 17
+ bae:	07 c0       	rjmp	.+14     	; 0xbbe <__udivmodhi4_ep>
+
+00000bb0 <__udivmodhi4_loop>:
+ bb0:	aa 1f       	adc	r26, r26
+ bb2:	bb 1f       	adc	r27, r27
+ bb4:	a6 17       	cp	r26, r22
+ bb6:	b7 07       	cpc	r27, r23
+ bb8:	10 f0       	brcs	.+4      	; 0xbbe <__udivmodhi4_ep>
+ bba:	a6 1b       	sub	r26, r22
+ bbc:	b7 0b       	sbc	r27, r23
+
+00000bbe <__udivmodhi4_ep>:
+ bbe:	88 1f       	adc	r24, r24
+ bc0:	99 1f       	adc	r25, r25
+ bc2:	5a 95       	dec	r21
+ bc4:	a9 f7       	brne	.-22     	; 0xbb0 <__udivmodhi4_loop>
+ bc6:	80 95       	com	r24
+ bc8:	90 95       	com	r25
+ bca:	bc 01       	movw	r22, r24
+ bcc:	cd 01       	movw	r24, r26
+ bce:	08 95       	ret
+
+00000bd0 <do_rand>:
+ bd0:	8f 92       	push	r8
+ bd2:	9f 92       	push	r9
+ bd4:	af 92       	push	r10
+ bd6:	bf 92       	push	r11
+ bd8:	cf 92       	push	r12
+ bda:	df 92       	push	r13
+ bdc:	ef 92       	push	r14
+ bde:	ff 92       	push	r15
+ be0:	cf 93       	push	r28
+ be2:	df 93       	push	r29
+ be4:	ec 01       	movw	r28, r24
+ be6:	68 81       	ld	r22, Y
+ be8:	79 81       	ldd	r23, Y+1	; 0x01
+ bea:	8a 81       	ldd	r24, Y+2	; 0x02
+ bec:	9b 81       	ldd	r25, Y+3	; 0x03
+ bee:	61 15       	cp	r22, r1
+ bf0:	71 05       	cpc	r23, r1
+ bf2:	81 05       	cpc	r24, r1
+ bf4:	91 05       	cpc	r25, r1
+ bf6:	21 f4       	brne	.+8      	; 0xc00 <do_rand+0x30>
+ bf8:	64 e2       	ldi	r22, 0x24	; 36
+ bfa:	79 ed       	ldi	r23, 0xD9	; 217
+ bfc:	8b e5       	ldi	r24, 0x5B	; 91
+ bfe:	97 e0       	ldi	r25, 0x07	; 7
+ c00:	2d e1       	ldi	r18, 0x1D	; 29
+ c02:	33 ef       	ldi	r19, 0xF3	; 243
+ c04:	41 e0       	ldi	r20, 0x01	; 1
+ c06:	50 e0       	ldi	r21, 0x00	; 0
+ c08:	38 d0       	rcall	.+112    	; 0xc7a <__divmodsi4>
+ c0a:	49 01       	movw	r8, r18
+ c0c:	5a 01       	movw	r10, r20
+ c0e:	9b 01       	movw	r18, r22
+ c10:	ac 01       	movw	r20, r24
+ c12:	a7 ea       	ldi	r26, 0xA7	; 167
+ c14:	b1 e4       	ldi	r27, 0x41	; 65
+ c16:	4d d0       	rcall	.+154    	; 0xcb2 <__muluhisi3>
+ c18:	6b 01       	movw	r12, r22
+ c1a:	7c 01       	movw	r14, r24
+ c1c:	ac ee       	ldi	r26, 0xEC	; 236
+ c1e:	b4 ef       	ldi	r27, 0xF4	; 244
+ c20:	a5 01       	movw	r20, r10
+ c22:	94 01       	movw	r18, r8
+ c24:	52 d0       	rcall	.+164    	; 0xcca <__mulohisi3>
+ c26:	dc 01       	movw	r26, r24
+ c28:	cb 01       	movw	r24, r22
+ c2a:	8c 0d       	add	r24, r12
+ c2c:	9d 1d       	adc	r25, r13
+ c2e:	ae 1d       	adc	r26, r14
+ c30:	bf 1d       	adc	r27, r15
+ c32:	b7 ff       	sbrs	r27, 7
+ c34:	03 c0       	rjmp	.+6      	; 0xc3c <do_rand+0x6c>
+ c36:	01 97       	sbiw	r24, 0x01	; 1
+ c38:	a1 09       	sbc	r26, r1
+ c3a:	b0 48       	sbci	r27, 0x80	; 128
+ c3c:	88 83       	st	Y, r24
+ c3e:	99 83       	std	Y+1, r25	; 0x01
+ c40:	aa 83       	std	Y+2, r26	; 0x02
+ c42:	bb 83       	std	Y+3, r27	; 0x03
+ c44:	9f 77       	andi	r25, 0x7F	; 127
+ c46:	df 91       	pop	r29
+ c48:	cf 91       	pop	r28
+ c4a:	ff 90       	pop	r15
+ c4c:	ef 90       	pop	r14
+ c4e:	df 90       	pop	r13
+ c50:	cf 90       	pop	r12
+ c52:	bf 90       	pop	r11
+ c54:	af 90       	pop	r10
+ c56:	9f 90       	pop	r9
+ c58:	8f 90       	pop	r8
+ c5a:	08 95       	ret
+
+00000c5c <rand_r>:
+ c5c:	b9 cf       	rjmp	.-142    	; 0xbd0 <do_rand>
+
+00000c5e <rand>:
+ c5e:	80 e0       	ldi	r24, 0x00	; 0
+ c60:	91 e0       	ldi	r25, 0x01	; 1
+ c62:	b6 cf       	rjmp	.-148    	; 0xbd0 <do_rand>
+
+00000c64 <srand>:
+ c64:	a0 e0       	ldi	r26, 0x00	; 0
+ c66:	b0 e0       	ldi	r27, 0x00	; 0
+ c68:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+ c6c:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__data_start+0x1>
+ c70:	a0 93 02 01 	sts	0x0102, r26	; 0x800102 <__data_start+0x2>
+ c74:	b0 93 03 01 	sts	0x0103, r27	; 0x800103 <__data_start+0x3>
+ c78:	08 95       	ret
+
+00000c7a <__divmodsi4>:
+ c7a:	05 2e       	mov	r0, r21
+ c7c:	97 fb       	bst	r25, 7
+ c7e:	16 f4       	brtc	.+4      	; 0xc84 <__divmodsi4+0xa>
+ c80:	00 94       	com	r0
+ c82:	0f d0       	rcall	.+30     	; 0xca2 <__negsi2>
+ c84:	57 fd       	sbrc	r21, 7
+ c86:	05 d0       	rcall	.+10     	; 0xc92 <__divmodsi4_neg2>
+ c88:	6d df       	rcall	.-294    	; 0xb64 <__udivmodsi4>
+ c8a:	07 fc       	sbrc	r0, 7
+ c8c:	02 d0       	rcall	.+4      	; 0xc92 <__divmodsi4_neg2>
+ c8e:	46 f4       	brtc	.+16     	; 0xca0 <__divmodsi4_exit>
+ c90:	08 c0       	rjmp	.+16     	; 0xca2 <__negsi2>
+
+00000c92 <__divmodsi4_neg2>:
+ c92:	50 95       	com	r21
+ c94:	40 95       	com	r20
+ c96:	30 95       	com	r19
+ c98:	21 95       	neg	r18
+ c9a:	3f 4f       	sbci	r19, 0xFF	; 255
+ c9c:	4f 4f       	sbci	r20, 0xFF	; 255
+ c9e:	5f 4f       	sbci	r21, 0xFF	; 255
+
+00000ca0 <__divmodsi4_exit>:
+ ca0:	08 95       	ret
+
+00000ca2 <__negsi2>:
+ ca2:	90 95       	com	r25
+ ca4:	80 95       	com	r24
+ ca6:	70 95       	com	r23
+ ca8:	61 95       	neg	r22
+ caa:	7f 4f       	sbci	r23, 0xFF	; 255
+ cac:	8f 4f       	sbci	r24, 0xFF	; 255
+ cae:	9f 4f       	sbci	r25, 0xFF	; 255
+ cb0:	08 95       	ret
+
+00000cb2 <__muluhisi3>:
+ cb2:	0f d0       	rcall	.+30     	; 0xcd2 <__umulhisi3>
+ cb4:	a5 9f       	mul	r26, r21
+ cb6:	90 0d       	add	r25, r0
+ cb8:	b4 9f       	mul	r27, r20
+ cba:	90 0d       	add	r25, r0
+ cbc:	a4 9f       	mul	r26, r20
+ cbe:	80 0d       	add	r24, r0
+ cc0:	91 1d       	adc	r25, r1
+ cc2:	11 24       	eor	r1, r1
+ cc4:	08 95       	ret
+
+00000cc6 <__mulshisi3>:
+ cc6:	b7 ff       	sbrs	r27, 7
+ cc8:	f4 cf       	rjmp	.-24     	; 0xcb2 <__muluhisi3>
+
+00000cca <__mulohisi3>:
+ cca:	f3 df       	rcall	.-26     	; 0xcb2 <__muluhisi3>
+ ccc:	82 1b       	sub	r24, r18
+ cce:	93 0b       	sbc	r25, r19
+ cd0:	08 95       	ret
+
+00000cd2 <__umulhisi3>:
+ cd2:	a2 9f       	mul	r26, r18
+ cd4:	b0 01       	movw	r22, r0
+ cd6:	b3 9f       	mul	r27, r19
+ cd8:	c0 01       	movw	r24, r0
+ cda:	a3 9f       	mul	r26, r19
+ cdc:	70 0d       	add	r23, r0
+ cde:	81 1d       	adc	r24, r1
+ ce0:	11 24       	eor	r1, r1
+ ce2:	91 1d       	adc	r25, r1
+ ce4:	b2 9f       	mul	r27, r18
+ ce6:	70 0d       	add	r23, r0
+ ce8:	81 1d       	adc	r24, r1
+ cea:	11 24       	eor	r1, r1
+ cec:	91 1d       	adc	r25, r1
+ cee:	08 95       	ret
+
+00000cf0 <_exit>:
+ cf0:	f8 94       	cli
+
+00000cf2 <__stop_program>:
+ cf2:	ff cf       	rjmp	.-2      	; 0xcf2 <__stop_program>
